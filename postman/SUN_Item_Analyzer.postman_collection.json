@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "30de4594-b752-4206-b906-4d0568fcf8cf",
+		"name": "SUN_Item_Analyzer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31643916"
+	},
+	"item": [
+		{
+			"name": "Analyze file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/files/analyze?includeTextReport=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"files",
+						"analyze"
+					],
+					"query": [
+						{
+							"key": "includeTextReport",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
