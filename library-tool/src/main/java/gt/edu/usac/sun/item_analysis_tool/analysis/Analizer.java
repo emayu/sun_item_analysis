@@ -17,6 +17,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Date;
@@ -29,6 +30,7 @@ import java.util.Map;
  */
 public class Analizer {
     
+    final SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MMM-yyy HH:mm");
     public TestProccedData analyze(String info, String source){
         StringReader reader = new StringReader(info);
         return analyze(reader, source);
@@ -106,17 +108,41 @@ public class Analizer {
     }
     
     public void printStatic(TestProccedData data, Appendable o) throws IOException{
+        printHeader(data, o);
+        printScoreDistributionResumen(data, o);
         printItemStatics(data, o);
-        printScoreDistributionResumen(data.getScoreResumen(), data.getDuration(), data.getSource());
     }
     
     public String getTextItemStatics(TestProccedData data) throws IOException{
         StringBuilder builder = new StringBuilder();
+        printHeader(data, builder);
+        builder.append(System.lineSeparator());
+        builder.append(System.lineSeparator());
+        printScoreDistributionResumen(data, builder);
+        builder.append(System.lineSeparator());
         printItemStatics(data, builder);
+        builder.append(System.lineSeparator());
         return builder.toString();
     }
     
-    
+    private void printHeader(TestProccedData data, Appendable o) throws IOException{
+        Formatter fm = new Formatter(o);
+        fm.format("%s", "SUN Item Analysis\n");
+        fm.format("%s", "Sistema de Ubicación y Nivelación -SUN-\n");
+        fm.format("%s", "Herramienta para el análisis de ítems\n");
+        
+        o.append(System.lineSeparator());
+        o.append(System.lineSeparator());
+        
+        fm.format("Archivo analizado: %s\n", data.getSource());
+        fm.format("Fecha %s\n", dateFormatter.format(new Date()));
+        
+        o.append(System.lineSeparator());        
+        
+        fm.format("%-18s %6d\n", "No. de Ítems", data.getItemsForAnalize());
+        fm.format("%-18s %6d\n", "No. de examinados", data.getExamineesCount());
+    }
+            
     
     private void printItemStatics(TestProccedData data, Appendable o) throws IOException{
         Formatter fm = new Formatter(o);
@@ -124,7 +150,7 @@ public class Analizer {
         o.append("Anális de Frecuencias").append(System.lineSeparator());
         
         fm.format("Fuente de análisis: %s\n", data.getSource());
-        fm.format("Fecha: %s\n", new Date());
+        fm.format("Fecha: %s\n", dateFormatter.format(new Date()));
         var duration = data.getDuration();
         fm.format("Duración %d secs %d milliseconds\n", duration.toSecondsPart(), duration.toMillisPart());
         final String bar = "=====================================================================================";
@@ -142,31 +168,33 @@ public class Analizer {
         }
     }
     
-    private void printScoreDistributionResumen(ScoreResumen resumen, Duration duration, String sourceTitle) {
+    private void printScoreDistributionResumen(TestProccedData data, Appendable o) throws IOException {
         String bar = "*************************";
         String finalBar0 = "----+----+----+----+----+";
         String finalBar1 = "    5   10   15   20   25";
 
-        System.out.println("");
-        System.out.println("Distribución de puntuaciones");
-        System.out.printf("Fuente de análisis: %s\n", sourceTitle);
-        System.out.printf("Fecha: %s\n", new Date());
-        System.out.printf("Duración %d secs %d milliseconds\n", duration.toSecondsPart(), duration.toMillisPart());
-        System.out.println("");
-        System.out.printf("%7s %6s %6s %6s %6s %6s %3s\n", "=======", "======", "======", "======", "======", "======", "===");
-        System.out.printf("%7s %6s %6s %6s %6s %6s %3s\n", "Puntaje", "#", "frec.", "frec.", "AprobX", "%Aprob", "ctc");
-        System.out.printf("%7s %6s %6s %6s %6s %6s %3s\n", "x corre", "corre", "      ", "acum.", "corre.", "Xcorre", "");
-        System.out.printf("%7s %6s %6s %6s %6s %6s %3s\n", "-------", "------", "------", "------", "------", "------", "---");
+        Formatter fm = new Formatter(o);
+        o.append(System.lineSeparator());
+        o.append("Distribución de puntuaciones").append(System.lineSeparator());
+        fm.format("Fuente de análisis: %s\n", data.getSource());
+        fm.format("Fecha: %s\n", dateFormatter.format(new Date()));
+        var duration = data.getDuration();
+        fm.format("Duración %d secs %d milliseconds\n", duration.toSecondsPart(), duration.toMillisPart());
+        o.append(System.lineSeparator());
+        fm.format("%7s %6s %6s %6s %6s %6s %3s\n", "=======", "======", "======", "======", "======", "======", "===");
+        fm.format("%7s %6s %6s %6s %6s %6s %3s\n", "Puntaje", "#", "frec.", "frec.", "AprobX", "%Aprob", "ctc");
+        fm.format("%7s %6s %6s %6s %6s %6s %3s\n", "x corre", "corre", "      ", "acum.", "corre.", "Xcorre", "");
+        fm.format("%7s %6s %6s %6s %6s %6s %3s\n", "-------", "------", "------", "------", "------", "------", "---");
 
-        for (var line : resumen.getScoreResumen()) {
+        for (var line : data.getScoreResumen().getScoreResumen()) {
             //Data table part
-            System.out.printf("%6.2f%1s %6d %6d %6d %6d %6.2f %3.0f %5.2f", line.getScore(), (line.isApproved() ? "*" : " "), line.getCorrectNumber(), line.getFrequency(), line.getCumulativeFrecuency(), line.getApprovedCount(), line.getApprovedPercentage(), line.getPct(), line.getPct());
+            fm.format("%6.2f%1s %6d %6d %6d %6d %6.2f %3.0f %5.2f", line.getScore(), (line.isApproved() ? "*" : " "), line.getCorrectNumber(), line.getFrequency(), line.getCumulativeFrecuency(), line.getApprovedCount(), line.getApprovedPercentage(), line.getPct(), line.getPct());
 
             //graph part
-            System.out.printf("%s%s\n", (line.getCorrectNumber() % 5 == 0 ? "+" : "|"), bar.substring(0, line.getPctInt()));
+            fm.format("%s%s\n", (line.getCorrectNumber() % 5 == 0 ? "+" : "|"), bar.substring(0, line.getPctInt()));
         }
-        System.out.printf("%78s\n", finalBar0);
-        System.out.printf("%78s\n", finalBar1);
+        fm.format("%78s\n", finalBar0);
+        fm.format("%78s\n", finalBar1);
     }
     
     private ScoreResumen generateResumen(TestProccedData data){
