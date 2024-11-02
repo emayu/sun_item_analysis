@@ -1,0 +1,28 @@
+<form>
+<button type="button" mat-raised-button (click)="fileInput.click()">Elegir archivo</button>
+<input hidden type="file" (change)="onFileChange($event.target)" #fileInput>
+<span class="file-name">{{selectedFile?.name}}</span>
+</form>
+<button mat-raised-button 
+ (click)="onSubmit()" 
+ [disabled]="!selectedFile"
+ color="primary">
+ Analizar
+</button>
+<div *ngIf="isSending">
+    <mat-spinner diameter="30"></mat-spinner>
+    <a>Procesando</a>
+</div>
+<div *ngIf="proccedData">
+    <h3>Resultado:</h3>
+    <button mat-icon-button matTooltip="Descargar archivo texto" (click)="downloadTextFile()">
+        <mat-icon>download</mat-icon>
+    </button>
+    <button mat-icon-button><mat-icon>more_vert</mat-icon></button>
+    <mat-divider></mat-divider>
+    <pre>{{ proccedData?.textReport}}</pre>
+    <mat-divider></mat-divider>
+    <button mat-icon-button matTooltip="Descargar archivo texto" (click)="downloadTextFile()">
+        <mat-icon>download</mat-icon>
+    </button>
+</div>

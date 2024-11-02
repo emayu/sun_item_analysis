@@ -10,3 +10,9 @@ This tool is build for being used in the Sistema de Ubicación y Nivelación -SU
 ## Run web service
 
 `java -jar rest-services\target\sun_analysis_item_rest-0.0.1-SNAPSHOT.jar`
+
+## Run UI in development mode
+```
+cd item-analysis-ui
+npm run start
+```
