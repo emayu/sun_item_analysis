@@ -12,10 +12,5 @@ public class SunAnalysisItemRestApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SunAnalysisItemRestApplication.class, args);
 	}
-        
-        @GetMapping("/")
-        public String helloWorld(){
-            return "Hello world";
-        }
 
 }
