@@ -4,6 +4,7 @@
  */
 package gt.edu.usac.sun.item_analysis_tool.analysis;
 
+import gt.edu.usac.sun.item_analysis_tool.analysis.exceptions.ConfigException;
 import gt.edu.usac.sun.item_analysis_tool.model.KeyConfig;
 import gt.edu.usac.sun.item_analysis_tool.model.TestProccedData;
 import java.io.BufferedReader;
@@ -25,7 +26,7 @@ public class TestDataCreator {
         this.br = reader;
     }
     
-    public TestProccedData createConfig() throws IOException{
+    public TestProccedData createConfig() throws IOException, ConfigException{
         String lineText;
         for(this.lastReadLine = 1; (lineText = this.br.readLine())!= null; this.lastReadLine++ ){
                 System.out.println(lineText);
@@ -45,22 +46,32 @@ public class TestDataCreator {
         
         String[] firstLineConfig = configLines[0].split(" ");
         int amountOfQuestion = 0;
+        if(firstLineConfig.length <= 1){
+            throw new ConfigException("No se encontro una configuración válida, Linea 1");
+        }
         try{
             amountOfQuestion = Integer.parseInt(firstLineConfig[1]);
         }catch(NumberFormatException ex){
-            throw new RuntimeException("No se encontro una configuración válida, Linea 1");
+            throw new ConfigException("No se encontro una configuración válida(cantidad de items), Linea 1");
         }
+        
         config.setItemsNumberConfig(amountOfQuestion);
         
         TreeMap<String, Long> itemKeyCount[] = new TreeMap[config.getItemsNumberConfig()];
         
         //read examen key line
-        if(configLines[1].length()!= config.getItemsNumberConfig()){
-            throw new RuntimeException("La configuración de la clave no tiene el tamaño indicado, Linea 2");
+        if(configLines[1] == null){
+            throw new ConfigException("La configuración de la clave no fue proporcionada, Linea 2");
+        }else if(configLines[1].length()!= config.getItemsNumberConfig()){
+            throw new ConfigException("La configuración de la clave no tiene el tamaño indicado, Linea 2");
+        }else if(configLines[2] == null){
+            throw new ConfigException("La configuración cantidad posibles respuestas no fue proporcionada, Linea 3");
         }else if(configLines[2].length() != config.getItemsNumberConfig()){
-            throw new RuntimeException("La configuración cantidad posibles respuestas no tiene el tamaño indicado, Linea 3");
+            throw new ConfigException("La configuración cantidad posibles respuestas no tiene el tamaño indicado, Linea 3");
+        }else if(configLines[3] == null){
+            throw new ConfigException("La configuración activación de items no fue proporcionada, Linea 4");
         }else if(configLines[3].length() != config.getItemsNumberConfig()){
-            throw new RuntimeException("La configuración activación de items no tiene el tamaño indicado, Linea 4");
+            throw new ConfigException("La configuración activación de items no tiene el tamaño indicado, Linea 4");
         }
         
         
@@ -77,7 +88,7 @@ public class TestDataCreator {
             try{
                 validResposes = Integer.parseInt(configLines[2].substring(item, item +1));
             }catch(NumberFormatException ex){
-                throw new RuntimeException("La configuración cantidad respuestas no es un valor correcto, Linea 3, " + (item +1));
+                throw new ConfigException("La configuración cantidad respuestas no es un valor correcto, Linea 3, " + (item +1));
             }
             
             //read actived line
@@ -86,7 +97,7 @@ public class TestDataCreator {
                     || inputConfig == 'N'
                     || inputConfig == 'y'
                     || inputConfig == 'n')){
-                throw new RuntimeException(String.format("El valor '%s' no es válido, Linea 4, %d", inputConfig, item + 1));
+                throw new ConfigException(String.format("El valor '%s' no es válido, Linea 4, %d", inputConfig, item + 1));
             }
             boolean isActivated = inputConfig == 'Y' || inputConfig == 'y';
             item_keyConfig.setActivated(isActivated);

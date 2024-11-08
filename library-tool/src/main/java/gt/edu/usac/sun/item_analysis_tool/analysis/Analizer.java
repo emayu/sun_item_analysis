@@ -4,6 +4,8 @@
  */
 package gt.edu.usac.sun.item_analysis_tool.analysis;
 
+import gt.edu.usac.sun.item_analysis_tool.analysis.exceptions.ConfigException;
+import gt.edu.usac.sun.item_analysis_tool.analysis.exceptions.ReadAnswerException;
 import gt.edu.usac.sun.item_analysis_tool.model.ItemStatic;
 import gt.edu.usac.sun.item_analysis_tool.model.ItemStatics;
 import gt.edu.usac.sun.item_analysis_tool.model.ResponseFrequency;
@@ -31,17 +33,17 @@ import java.util.Map;
 public class Analizer {
     
     final SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MMM-yyy HH:mm");
-    public TestProccedData analyze(String info, String source){
+    public TestProccedData analyze(String info, String source) throws  ReadAnswerException, ConfigException{
         StringReader reader = new StringReader(info);
         return analyze(reader, source);
     }
-    public TestProccedData analyze(File file) throws FileNotFoundException{
+    public TestProccedData analyze(File file) throws FileNotFoundException, ReadAnswerException, ConfigException{
          FileReader reader = new FileReader(file);
          return analyze(reader, file.getAbsolutePath());
          
     }
     
-    public TestProccedData analyze(Reader reader, String sourceTitle){
+    public TestProccedData analyze(Reader reader, String sourceTitle) throws ReadAnswerException, ConfigException{
         Instant start = Instant.now();
         System.out.printf("Analyzing from: %s\n", sourceTitle);
         try(BufferedReader dr = new BufferedReader(reader)){
@@ -57,7 +59,7 @@ public class Analizer {
             for(long lineNumber = configCreator.getLastReadLine() + 1; (lineText = dr.readLine())!= null; lineNumber++ ){
                 //System.out.println(lineText);
                 if(lineText.length() != data.getItemsNumberConfig()){
-                    throw new RuntimeException(String.format("Error se encontraron %d respuestas, se esperaban %d, Linea %d", lineText.length(), data.getItemsNumberConfig(), lineNumber));
+                    throw new ReadAnswerException(String.format("Error se encontraron %d respuestas, se esperaban %d, Linea %d", lineText.length(), data.getItemsNumberConfig(), lineNumber));
                 }
                 int countValid = 0;
                 for(int anwser=0; anwser < data.getItemsNumberConfig(); anwser++){
@@ -191,7 +193,10 @@ public class Analizer {
             fm.format("%6.2f%1s %6d %6d %6d %6d %6.2f %3.0f %5.2f", line.getScore(), (line.isApproved() ? "*" : " "), line.getCorrectNumber(), line.getFrequency(), line.getCumulativeFrecuency(), line.getApprovedCount(), line.getApprovedPercentage(), line.getPct(), line.getPct());
 
             //graph part
-            fm.format("%s%s\n", (line.getCorrectNumber() % 5 == 0 ? "+" : "|"), bar.substring(0, line.getPctInt()));
+            String barToPrint = line.getPctInt() < bar.length()
+                    ? bar.substring(0, line.getPctInt())
+                    : bar.concat("[FR]");
+            fm.format("%s%s\n", (line.getCorrectNumber() % 5 == 0 ? "+" : "|"), barToPrint);
         }
         fm.format("%78s\n", finalBar0);
         fm.format("%78s\n", finalBar1);

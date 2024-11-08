@@ -37,13 +37,15 @@ public class Sun_item_analysis_tool {
             }
             file = path.toFile();
             Analizer analizer = new Analizer();
-            analizer.analyze(file);
+            TestProccedData data = analizer.analyze(file);
+            analizer.printStatic(data, System.out);
         } else {
             LOG.info("Analyzing from hard code data");
             Analizer analizer = new Analizer();
             TestProccedData data = analizer.analyze(TEST_DATA, "memory data Q507_38items");
             analizer.printStatic(data, System.out);
         }
+        
     }
     
     private static final String TEST_DATA = """

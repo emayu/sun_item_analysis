@@ -8,7 +8,7 @@ import gt.edu.usac.sun.item_analysis_tool.model.TestProccedData;
 
 /**
  *
- * @author Usuario
+ * @author emayu
  */
 public class ResponseDto {
     String status;

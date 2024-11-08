@@ -1,14 +1,16 @@
 <form>
 <button type="button" mat-raised-button (click)="fileInput.click()">Elegir archivo</button>
-<input hidden type="file" (change)="onFileChange($event.target)" #fileInput>
+<input hidden type="file" (change)="onFileChange($event.target)" #fileInput accept=".txt" >
 <span class="file-name">{{selectedFile?.name}}</span>
 </form>
 <button mat-raised-button 
+ style="margin-top: 1em;"
  (click)="onSubmit()" 
  [disabled]="!selectedFile"
  color="primary">
  Analizar
 </button>
+
 <div *ngIf="isSending">
     <mat-spinner diameter="30"></mat-spinner>
     <a>Procesando</a>

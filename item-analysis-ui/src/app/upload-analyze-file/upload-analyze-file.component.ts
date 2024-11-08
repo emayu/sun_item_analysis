@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AnalyzeFileService } from '../../services/analyze-file.service';
 import { ResponseData } from '../../models/response';
@@ -9,6 +9,7 @@ import { MatDivider } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-upload-analyze-file',
@@ -30,12 +31,12 @@ export class UploadAnalyzeFileComponent {
   isSending = false;
   proccedData:ResponseData | null =  null;
 
-  constructor(private analyzeService:AnalyzeFileService){
-
-  }
+  constructor(
+    private analyzeService:AnalyzeFileService,
+    private _snackBar: MatSnackBar
+  ){}
 
   onFileChange(input:any){
-    console.log(input);
     if(input?.files){
       this.selectedFile = input.files[0];
     }
@@ -58,8 +59,8 @@ export class UploadAnalyzeFileComponent {
   }
 
   onSubmit(){
-    console.log('here')
     if(this.selectedFile){
+      this.proccedData = null;
       const formData = new FormData();
       formData.append('file', this.selectedFile);
       console.log('sending');
@@ -68,10 +69,20 @@ export class UploadAnalyzeFileComponent {
       .subscribe({
         next: (response) => {
           console.log('server response:', response.status);
+          this._snackBar.open("Completado", "", {duration:2500});
           this.proccedData = response;
         },
         error: (err) => {
-          console.error('error:', err)
+          console.error('error:', err);
+          this.isSending = false;
+          if(err instanceof HttpErrorResponse){
+            console.log('is HttpErrorResponse');
+          }
+          if(err.error && err.error.message){
+            this._snackBar.open(`Error:\n${err.error.message}`, "Cerrar", {panelClass: "snackbar-error"});
+          }else{
+            this._snackBar.open(`Ocurrió un error`, "Cerrar", {panelClass: "snackbar-error"});
+          }
         },
         complete:() =>{
           this.isSending = false;
