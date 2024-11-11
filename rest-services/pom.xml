@@ -51,7 +51,7 @@
 		</dependency>
                 <dependency>
                     <groupId>gt.edu.usac.sun</groupId>
-                    <artifactId>item_library_tool</artifactId>
+                    <artifactId>sun_item_analysis_library_tool</artifactId>
                     <version>${project.version}</version>
                 </dependency>
 	</dependencies>
