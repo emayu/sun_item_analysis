@@ -9,10 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>gt.edu.usac.sun</groupId>
-	<artifactId>sun_analysis_item_rest</artifactId>
+	<artifactId>sun_item_analysis_rest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>item_rest_services</name>
-	<description>Rest controller for analyze item</description>
+	<description>Rest controller for item analyze</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -77,7 +76,7 @@
                                 <outputDirectory>${build.directory}/classes/static/</outputDirectory>
                                 <resources>
                                     <resource>
-                                        <directory>../item-analysis-ui/dist</directory>
+                                        <directory>../ui/dist</directory>
                                     </resource>
                                 </resources>
                             </configuration>

@@ -32,4 +32,4 @@ build/
 ### VS Code ###
 .vscode/
 
-item-analysis-ui/node/
+ui/node/

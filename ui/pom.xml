@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>gt.edu.usac.sun</groupId>
     <artifactId>item_analysis_ui</artifactId>
-    <name>sun_item_angular_ui</name>
+    <name>sun_item_analysis_angular_ui</name>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     
