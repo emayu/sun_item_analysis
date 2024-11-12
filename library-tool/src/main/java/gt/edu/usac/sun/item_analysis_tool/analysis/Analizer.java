@@ -25,12 +25,15 @@ import java.time.Instant;
 import java.util.Date;
 import java.util.Formatter;
 import java.util.Map;
+import java.util.logging.Logger;
 
 /**
  *
  * @author emayu
  */
 public class Analizer {
+
+    private static final Logger LOG = Logger.getLogger(Analizer.class.getName());
     
     final SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MMM-yyy HH:mm");
     public TestProccedData analyze(String info, String source) throws  ReadAnswerException, ConfigException{
@@ -45,13 +48,13 @@ public class Analizer {
     
     public TestProccedData analyze(Reader reader, String sourceTitle) throws ReadAnswerException, ConfigException{
         Instant start = Instant.now();
-        System.out.printf("Analyzing from: %s\n", sourceTitle);
+        LOG.info(() -> "Analyzing from: " + sourceTitle);
         try(BufferedReader dr = new BufferedReader(reader)){
             //read config
             TestDataCreator configCreator = new TestDataCreator(dr);
             TestProccedData data = configCreator.createConfig();
             data.setSource(sourceTitle);
-            System.out.println(data);
+            LOG.info(data.toString());
             
             //read answers
             String lineText;

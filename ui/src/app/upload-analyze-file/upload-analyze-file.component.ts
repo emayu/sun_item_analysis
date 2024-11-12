@@ -1,5 +1,5 @@
 import { HttpClient, HttpClientModule, HttpErrorResponse } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, isDevMode } from '@angular/core';
 import { AnalyzeFileService } from '../../services/analyze-file.service';
 import { ResponseData } from '../../models/response';
 import { CommonModule } from '@angular/common';
@@ -30,6 +30,7 @@ export class UploadAnalyzeFileComponent {
   selectedFile:File | null = null;
   isSending = false;
   proccedData:ResponseData | null =  null;
+  isDevMode = isDevMode();
 
   constructor(
     private analyzeService:AnalyzeFileService,
@@ -40,7 +41,7 @@ export class UploadAnalyzeFileComponent {
     if(input?.files){
       this.selectedFile = input.files[0];
     }
-    
+
   }
 
   downloadTextFile(){

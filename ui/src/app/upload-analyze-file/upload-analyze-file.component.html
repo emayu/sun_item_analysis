@@ -20,7 +20,7 @@
     <button mat-icon-button matTooltip="Descargar archivo texto" (click)="downloadTextFile()">
         <mat-icon>download</mat-icon>
     </button>
-    <button mat-icon-button><mat-icon>more_vert</mat-icon></button>
+    <button *ngIf="isDevMode" mat-icon-button><mat-icon>more_vert</mat-icon></button>
     <mat-divider></mat-divider>
     <pre>{{ proccedData?.textReport}}</pre>
     <mat-divider></mat-divider>
