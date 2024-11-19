@@ -1,3 +1,4 @@
+<h2>Analizar archivo</h2>
 <form>
 <button type="button" mat-raised-button (click)="fileInput.click()">Elegir archivo</button>
 <input hidden type="file" (change)="onFileChange($event.target)" #fileInput accept=".txt" >
@@ -22,7 +23,7 @@
     </button>
     <button *ngIf="isDevMode" mat-icon-button><mat-icon>more_vert</mat-icon></button>
     <mat-divider></mat-divider>
-    <pre>{{ proccedData?.textReport}}</pre>
+    <pre>{{ proccedData.textReport }}</pre>
     <mat-divider></mat-divider>
     <button mat-icon-button matTooltip="Descargar archivo texto" (click)="downloadTextFile()">
         <mat-icon>download</mat-icon>
