@@ -9,11 +9,12 @@ import gt.edu.usac.sun.item_analysis_tool.model.TestProccedData;
 /**
  *
  * @author emayu
+ * @param <T> data type
  */
-public class ResponseDto {
+public class ResponseDto<T> {
     String status;
     String message;
-    TestProccedData data;
+    T data;
     String textReport;
 
     public String getStatus() {
@@ -32,11 +33,11 @@ public class ResponseDto {
         this.message = message;
     }
 
-    public TestProccedData getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(TestProccedData data) {
+    public void setData(T data) {
         this.data = data;
     }
 

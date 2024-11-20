@@ -18,17 +18,23 @@ import java.util.TreeSet;
  */
 public class TestDataCreator {
     
-    private final String configLines[] = new String[4];
+    private final String configLines[];
     private final BufferedReader br;
     private int lastReadLine;
 
     public TestDataCreator(BufferedReader reader) {
         this.br = reader;
+        this.configLines = new String[4];
+    }
+    
+    public TestDataCreator(String[] config){
+        this.br = null;
+        this.configLines = config;
     }
     
     public TestProccedData createConfig() throws IOException, ConfigException{
         String lineText;
-        for(this.lastReadLine = 1; (lineText = this.br.readLine())!= null; this.lastReadLine++ ){
+        for(this.lastReadLine = 1; this.br != null && (lineText = this.br.readLine())!= null; this.lastReadLine++ ){
                 System.out.println(lineText);
                 //read only first four line
                 if(this.lastReadLine == 1){
@@ -44,6 +50,9 @@ public class TestDataCreator {
         }
         TestProccedData config = new TestProccedData();
         
+        if(this.configLines == null || this.configLines.length < 3){
+            throw new ConfigException("Configuración invalida, el parametró configLines no fue proporcionado correctamente");
+        }
         String[] firstLineConfig = configLines[0].split(" ");
         int amountOfQuestion = 0;
         if(firstLineConfig.length <= 1){

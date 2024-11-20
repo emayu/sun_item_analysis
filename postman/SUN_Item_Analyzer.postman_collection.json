@@ -42,6 +42,62 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Transform file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Usuario/Documents/yaque/2024/shared/Proyecto Iteman/Ánalisis/TXT enviados para análisis (salieron de Informática)/B501_1afecha_para análisis.txt"
+						},
+						{
+							"key": "syllabus",
+							"value": "501",
+							"type": "text"
+						},
+						{
+							"key": "line1",
+							"value": " 40 Z O 0",
+							"type": "text"
+						},
+						{
+							"key": "line2",
+							"value": "CDCBBACBBCACDBCBCCCCBBAAACBCBBCDBBBBBCCF",
+							"type": "text"
+						},
+						{
+							"key": "line3",
+							"value": "4444444444444444444444444444444444444445",
+							"type": "text"
+						},
+						{
+							"key": "line4",
+							"value": "YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYN",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/files/transform",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"files",
+						"transform"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
