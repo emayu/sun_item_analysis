@@ -56,7 +56,7 @@ public class TestDataCreator {
         String[] firstLineConfig = configLines[0].split(" ");
         int amountOfQuestion = 0;
         if(firstLineConfig.length <= 1){
-            throw new ConfigException("No se encontro una configuración válida, Linea 1");
+            throw new ConfigException("No se encontro una configuración válida(falta el espacio en blanco),  Linea 1");
         }
         try{
             amountOfQuestion = Integer.parseInt(firstLineConfig[1]);

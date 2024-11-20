@@ -58,11 +58,11 @@ public class SingleSyllabusSeparator {
             for(long lineNumber = 1; (inputLine = dr.readLine())!= null; lineNumber++){
                 String[] temp = inputLine.split(syllabus);
                 if(temp.length <= 1){
-                    throw new ReadAnswerException(String.format("No se encontró el temario indicado %s en archivo entrada, Linea %d", syllabus, lineNumber));
+                    throw new ReadAnswerException(String.format("No se encontró el temario '%s' indicado configuración en el archivo entrada, Linea %d archivo de entrada", syllabus, lineNumber));
                 }
                 String answers = temp[1];
                 if(answers.length() != data.getItemsNumberConfig()){
-                    throw new ReadAnswerException(String.format("El número de respuestas en el archivo de entrada es diferente al indicado en la configuración %d, Linea %d", data.getItemsNumberConfig(), lineNumber));
+                    throw new ReadAnswerException(String.format("El número de respuestas(%d) en el archivo de entrada es diferente al indicado en la configuración(%d), Linea %d archivo de entrada", answers.length(), data.getItemsNumberConfig(), lineNumber));
                 }
                 builder.append(answers).append(System.lineSeparator());
             }
