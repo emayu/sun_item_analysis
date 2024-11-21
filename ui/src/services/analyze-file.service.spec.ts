@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AnalyzeFileService } from './analyze-file.service';
+import { UpdaloadFileService } from './analyze-file.service';
 
 describe('AnalyzeFileService', () => {
-  let service: AnalyzeFileService;
+  let service: UpdaloadFileService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(AnalyzeFileService);
+    service = TestBed.inject(UpdaloadFileService);
   });
 
   it('should be created', () => {

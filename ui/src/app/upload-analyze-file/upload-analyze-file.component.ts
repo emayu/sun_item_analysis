@@ -1,11 +1,11 @@
 import { HttpClient, HttpClientModule, HttpErrorResponse } from '@angular/common/http';
 import { Component, isDevMode } from '@angular/core';
-import { AnalyzeFileService } from '../../services/analyze-file.service';
+import { UpdaloadFileService } from '../../services/analyze-file.service';
 import { ResponseData } from '../../models/response';
 import { CommonModule } from '@angular/common';
 
 import { MatButtonModule } from '@angular/material/button';
-import { MatDivider } from '@angular/material/divider';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -14,11 +14,11 @@ import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-upload-analyze-file',
   standalone: true,
-  providers: [AnalyzeFileService],
+  providers: [UpdaloadFileService],
   imports: [HttpClientModule,
     CommonModule,
     MatButtonModule,
-    MatDivider,
+    MatDividerModule,
     MatIconModule,
     MatTooltipModule,
     MatProgressSpinnerModule],
@@ -33,7 +33,7 @@ export class UploadAnalyzeFileComponent {
   isDevMode = isDevMode();
 
   constructor(
-    private analyzeService:AnalyzeFileService,
+    private processFileService:UpdaloadFileService,
     private _snackBar: MatSnackBar
   ){}
 
@@ -66,7 +66,7 @@ export class UploadAnalyzeFileComponent {
       formData.append('file', this.selectedFile);
       console.log('sending');
       this.isSending = true;
-      this.analyzeService.analyzeFile(formData)
+      this.processFileService.analyzeFile(formData)
       .subscribe({
         next: (response) => {
           console.log('server response:', response.status);

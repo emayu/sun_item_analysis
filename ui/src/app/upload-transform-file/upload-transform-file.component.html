@@ -1,16 +1,100 @@
 <h2>Transfomar archivo</h2>
 
-<mat-stepper linear #stepper>
-    <mat-step>
-        <ng-template matStepLabel>Selecciona archivo</ng-template>
+<mat-stepper linear #stepper (selectionChange)="onStepChange($event)">
+    <mat-step 
+    [completed]="selectedFile"
+    >
+        <ng-template matStepLabel> 
+            Selecciona archivo <br/>
+            <b>{{ selectedFile ? selectedFile.name : "" }}</b>
+        </ng-template>
+        <button type="button" mat-raised-button (click)="fileInput.click()">Elegir archivo</button>
+        <input hidden type="file" (change)="onFileChange($event.target)" #fileInput accept=".txt" >
+        <span class="file-name">{{selectedFile?.name}}</span>
+        <div>
+            <button style="margin-top: 1em;" mat-button 
+             [disabled]="!selectedFile"
+             matStepperNext>Siguiente</button>
+        </div>
     </mat-step>
-    <mat-step>
+    <mat-step [stepControl]="configFormGroup">
         <ng-template matStepLabel>Configuración</ng-template>
+        <form [formGroup]="configFormGroup">
+            <mat-form-field>
+                <mat-label>Temario</mat-label>
+                <input matInput formControlName="syllabus" placeholder="ejemplo:501" type="text">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Configuración linea 1</mat-label>
+                <input matInput formControlName="line1" placeholder="ejemplo: 40 Z O 0" type="text">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Configuración linea 2(clave temario)</mat-label>
+                <input matInput formControlName="line2" placeholder="clave del temario" type="text">
+                <button *ngIf="line2?.valid" matSuffix mat-button (click)="autoGenerateConfig()" >Auto generar formulario</button>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Configuración linea 3</mat-label>
+                <input matInput formControlName="line3" type="text">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Configuración linea 4</mat-label>
+                <input matInput formControlName="line4" type="text">
+            </mat-form-field>
+        </form>
+        <div>
+            <button mat-button matStepperPrevious>Atrás</button>
+            <button mat-button matStepperNext [disabled]="!configFormGroup.valid">Siguiente</button>
+        </div>
     </mat-step>
-    <mat-step>
+    <mat-step >
         <ng-template matStepLabel>Activar o desactivar ítems</ng-template>
+        <div>
+            <button mat-button matStepperPrevious>Atrás</button>
+            <button mat-button 
+                (click)="transform(stepper)"
+                [disabled]="isSending" >
+                <mat-spinner *ngIf="isSending"  diameter="20"></mat-spinner>
+                <span *ngIf="!isSending">Transformar</span>
+            </button>
+        </div>
     </mat-step>
-    <mat-step>
+    <mat-step (interacted)="interacted($event)"
+     [hasError]="error" >
         <ng-template matStepLabel>Completado</ng-template>
+        <h3>Resultado:</h3>
+        <div *ngIf="proccedData">
+            <button 
+            mat-icon-button 
+            matTooltip="Descargar archivo texto" 
+            (click)="downloadTextFile()">
+                <mat-icon>download</mat-icon>
+            </button>
+            <button *ngIf="hasDownloaded" mat-raised-button routerLink="/analyze">
+                Ir a analizador
+            </button>
+            <mat-divider></mat-divider>
+            <pre *ngIf="proccedData">{{ proccedData.data }}</pre>
+            <button 
+            mat-icon-button 
+            matTooltip="Descargar archivo texto" 
+            (click)="downloadTextFile()">
+                <mat-icon>download</mat-icon>
+            </button>
+            <button *ngIf="hasDownloaded" mat-raised-button routerLink="/analyze">
+                Ir a analizador
+            </button>
+        </div>
+        <div *ngIf="error">
+            <p>Por favor revise la información proporcionada y vuelva a intentar.</p>
+            <h4>Detalle error:</h4>
+            <p>{{error}}</p>
+            <button mat-button 
+                (click)="transform(stepper)"
+                [disabled]="isSending" >
+                <mat-spinner *ngIf="isSending"  diameter="20"></mat-spinner>
+                <span *ngIf="!isSending">Volver a intentar</span>
+            </button>
+        </div>
     </mat-step>
 </mat-stepper>
