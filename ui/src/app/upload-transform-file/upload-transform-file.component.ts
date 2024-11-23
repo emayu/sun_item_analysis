@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { MatStepper, MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormArray, FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { UpdaloadFileService } from '../../services/analyze-file.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -10,7 +11,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDividerModule } from '@angular/material/divider';
 import { ResponseData } from '../../models/response';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox'
 import { RouterModule } from '@angular/router';
+import { StepperSelectionEvent } from '@angular/cdk/stepper';
+
 
 @Component({
   selector: 'app-upload-transform-file',
@@ -21,6 +26,9 @@ import { RouterModule } from '@angular/router';
     MatProgressSpinnerModule, 
     MatDividerModule,
     MatIconModule,
+    MatTableModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
     ReactiveFormsModule,
     CommonModule, 
     RouterModule,
@@ -36,10 +44,14 @@ export class UploadTransformFileComponent {
   error: string |null = null;
   hasDownloaded = false;
 
+  displayedColumns:string[] = [];
+  itemsConfigData:any[][]= [];
+  formArrayInputs = new FormArray<FormControl>([]);
+
   configFormGroup = this.formBuilder.group({
     syllabus: ['', Validators.required],
     line1: ['', Validators.required],
-    line2: ['', [Validators.required, Validators.pattern(/^[A-Za-z]+$/)]],
+    line2: ['', [Validators.required, Validators.pattern(/^[A-Z]+$/)]],
     line3: ['', [Validators.required, Validators.pattern(/^[1-9]+$/)]],
     line4: ['', [Validators.required, Validators.pattern(/^[Y|N]+$/)]],
   })
@@ -56,7 +68,7 @@ export class UploadTransformFileComponent {
     }
   }
 
-  transform(stepper:MatStepper){
+  transform(stepper:MatStepper|null){
     if(this.selectedFile){
       const formData = new FormData();
       formData.append('file', this.selectedFile);
@@ -73,7 +85,10 @@ export class UploadTransformFileComponent {
       .subscribe({
         next: (response) => {
           this.proccedData = response;
-          stepper.next();
+          if(stepper){
+            stepper.next();
+          }
+          
         },
         error: (err) => {
           this.isSending = false;
@@ -84,15 +99,15 @@ export class UploadTransformFileComponent {
           }else{
             this.error = err;
           }
-          stepper.next();
+          if(stepper){
+            stepper.next();
+          }
         },
         complete: () =>{
           this.isSending = false;
         }
       })
     }
-    
-
     
   }
 
@@ -112,13 +127,69 @@ export class UploadTransformFileComponent {
     }
   }
 
-  onStepChange(event:any){
-    console.log(event);
+  toggleActivateItem(event:MatCheckboxChange, colIndex:number){
+    const activatedRowIndex = 2;
+    const rowData=  this.itemsConfigData[activatedRowIndex];
+    rowData[colIndex] = !rowData[colIndex];
+    const line4 = rowData.reduce((acc: string, val: boolean) =>
+      acc + (val ? "Y" : "N")
+      , "");
+     this.line4.setValue(line4) ;
+    
   }
 
-  interacted(event:any){
-    console.log(event);
+  onStepChange(event:StepperSelectionEvent){
+    if(event.selectedIndex == 2 && event.previouslySelectedIndex !=3){//Revisión de ítems tab
+      this.recalculateTable();
+    }
+    if(event.selectedIndex == 3){ //Completado
+      this.transform(null);
+    }
   }
+  
+
+  updateLine2(){
+    const rowKeyConfig = 0;
+    const controlRow = this.itemsConfigData[rowKeyConfig];
+    const line2 = controlRow.reduce( (acc, ctrl:FormControl) => acc + ctrl.value, "")
+    this.line2.setValue(line2);
+  }
+
+  recalculateTable() {
+    let max = (this.line2.value?.length || 0) > (this.line3.value?.length || 0) ? this.line2.value?.length : this.line3.value?.length;
+    max = (max || 0) > (this.line4.value?.length || 0) ? (max || 0) : this.line4.value?.length || 0;
+    
+    this.displayedColumns = [];
+    this.formArrayInputs = new FormArray<FormControl>([]);
+    const answerRow = [];
+    const amountRow = [];
+    const activatedRow = [];
+    for (let i = 0; i < max; i++) {
+      this.displayedColumns.push(`Ítem ${i + 1}`);
+      const answerRawValue = this.line2.value?.charAt(i);
+      if( answerRawValue ) {
+        let ctrl = new FormControl(answerRawValue, [Validators.required, Validators.pattern(/^[A-Z]{1}$/)]);
+        ctrl.valueChanges.subscribe( () => {
+          if(ctrl.valid){
+            this.updateLine2();
+          }
+        });
+        answerRow.push(ctrl);
+        this.formArrayInputs.push(ctrl);
+      } else {
+        answerRow.push(null);
+      }
+      amountRow.push(this.line3.value?.charAt(i));
+      const rawValue = this.line4.value?.charAt(i);
+      if(rawValue){
+        activatedRow.push(rawValue == 'Y'? true : false);
+      }else{
+        activatedRow.push(null)
+      }
+    }
+    this.itemsConfigData = [ answerRow, amountRow, activatedRow];
+  }
+
 
   autoGenerateConfig(){
     if(this.line2.value){
