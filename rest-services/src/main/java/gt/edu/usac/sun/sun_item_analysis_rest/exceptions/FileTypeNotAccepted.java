@@ -6,7 +6,7 @@ package gt.edu.usac.sun.sun_item_analysis_rest.exceptions;
 
 /**
  *
- * @author Usuario
+ * @author emayu
  */
 public class FileTypeNotAccepted extends RuntimeException{
 
