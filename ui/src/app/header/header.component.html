@@ -1,0 +1,15 @@
+<mat-toolbar class="tool-bar-bottom-margin">
+    <button mat-icon-button routerLink="/" >
+        <mat-icon>home</mat-icon>
+    </button>
+    <h1>{{ title }}</h1>
+    <span  class="tool-bar-spacer"></span>
+    <button mat-icon-button (click)="toggleTheme()">
+        @if(isDark){
+            <mat-icon>light_mode</mat-icon>
+        }@else{
+            <mat-icon>dark_mode</mat-icon>
+        }
+        
+    </button>
+</mat-toolbar>
