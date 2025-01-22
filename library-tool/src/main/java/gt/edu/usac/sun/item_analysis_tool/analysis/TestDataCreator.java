@@ -51,7 +51,7 @@ public class TestDataCreator {
         TestProccedData config = new TestProccedData();
         
         if(this.configLines == null || this.configLines.length < 3){
-            throw new ConfigException("Configuración invalida, el parametró configLines no fue proporcionado correctamente");
+            throw new ConfigException("Configuración inválida, el parámetro configLines no fue proporcionado correctamente");
         }
         
         String firstLineConfig = configLines[0];
@@ -76,7 +76,7 @@ public class TestDataCreator {
         try{
             amountOfQuestion = Integer.parseInt(firstLineConfig.substring(trimColumn, 3));
         }catch(NumberFormatException ex){
-            throw new ConfigException("No se encontro una configuración válida(cantidad de items), Linea 1");
+            throw new ConfigException("No se encontró una configuración válida(cantidad de items), Línea 1");
         }
         
         config.setItemsNumberConfig(amountOfQuestion);
@@ -85,17 +85,17 @@ public class TestDataCreator {
         
         //read examen key line
         if(configLines[1] == null){
-            throw new ConfigException("La configuración de la clave no fue proporcionada, Linea 2");
+            throw new ConfigException("La configuración de la clave no fue proporcionada, Línea 2");
         }else if(configLines[1].length()!= config.getItemsNumberConfig()){
-            throw new ConfigException("La configuración de la clave no tiene el tamaño indicado, Linea 2");
+            throw new ConfigException("La configuración de la clave no tiene el tamaño indicado, Línea 2");
         }else if(configLines[2] == null){
-            throw new ConfigException("La configuración cantidad posibles respuestas no fue proporcionada, Linea 3");
+            throw new ConfigException("La configuración cantidad posibles respuestas no fue proporcionada, Línea 3");
         }else if(configLines[2].length() != config.getItemsNumberConfig()){
-            throw new ConfigException("La configuración cantidad posibles respuestas no tiene el tamaño indicado, Linea 3");
+            throw new ConfigException("La configuración cantidad posibles respuestas no tiene el tamaño indicado, Línea 3");
         }else if(configLines[3] == null){
-            throw new ConfigException("La configuración activación de items no fue proporcionada, Linea 4");
+            throw new ConfigException("La configuración activación de items no fue proporcionada, Línea 4");
         }else if(configLines[3].length() != config.getItemsNumberConfig()){
-            throw new ConfigException("La configuración activación de items no tiene el tamaño indicado, Linea 4");
+            throw new ConfigException("La configuración activación de items no tiene el tamaño indicado, Línea 4");
         }
         
         
@@ -112,7 +112,7 @@ public class TestDataCreator {
             try{
                 validResposes = Integer.parseInt(configLines[2].substring(item, item +1));
             }catch(NumberFormatException ex){
-                throw new ConfigException("La configuración cantidad respuestas no es un valor correcto, Linea 3, " + (item +1));
+                throw new ConfigException("La configuración cantidad respuestas no es un valor correcto, Línea 3, " + (item +1));
             }
             
             //read actived line
@@ -121,7 +121,7 @@ public class TestDataCreator {
                     || inputConfig == 'N'
                     || inputConfig == 'y'
                     || inputConfig == 'n')){
-                throw new ConfigException(String.format("El valor '%s' no es válido, Linea 4, %d", inputConfig, item + 1));
+                throw new ConfigException(String.format("El valor '%s' no es válido, Línea 4, %d", inputConfig, item + 1));
             }
             boolean isActivated = inputConfig == 'Y' || inputConfig == 'y';
             item_keyConfig.setActivated(isActivated);
