@@ -227,7 +227,15 @@ export class UploadTransformFileComponent {
   }
 
   private getFirstLine(amount:number) {
-    return ` ${amount} Z O 0`;
+    let spacesAtBeginig;
+    if(amount <= 9){
+      spacesAtBeginig = "  ";//two spaces
+    }else if(amount <=99){
+      spacesAtBeginig = " ";//one space
+    }else{
+      spacesAtBeginig = ""//not spaces for 100 to 999
+    }
+    return `${spacesAtBeginig}${amount} Z O 0`;
   }
 
 }

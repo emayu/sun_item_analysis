@@ -53,13 +53,28 @@ public class TestDataCreator {
         if(this.configLines == null || this.configLines.length < 3){
             throw new ConfigException("Configuración invalida, el parametró configLines no fue proporcionado correctamente");
         }
-        String[] firstLineConfig = configLines[0].split(" ");
-        int amountOfQuestion = 0;
-        if(firstLineConfig.length <= 1){
-            throw new ConfigException("No se encontro una configuración válida(falta el espacio en blanco),  Linea 1");
+        
+        String firstLineConfig = configLines[0];
+        if(firstLineConfig == null || firstLineConfig.isBlank()){
+            throw new ConfigException("No se encontró una configuración válida(línea vacía),  Línea 1");
         }
+        if(firstLineConfig.length() < 3){
+            throw new ConfigException("No se encontró una configuración válida(cantidad de items), Línea 1 columna 1 a 3");
+        }
+        //first line contains amount of question in the first three columns, 
+        //with hundreds in the column 1, tens in column 2 
+        //and units in column 3
+        //"  1" is valid because units are in the third column
+        short trimColumn = 0;
+        if(firstLineConfig.charAt(0) == ' '){
+            trimColumn++;
+        }
+        if(firstLineConfig.charAt(1) == ' '){
+            trimColumn++;
+        }
+        int amountOfQuestion = 0;
         try{
-            amountOfQuestion = Integer.parseInt(firstLineConfig[1]);
+            amountOfQuestion = Integer.parseInt(firstLineConfig.substring(trimColumn, 3));
         }catch(NumberFormatException ex){
             throw new ConfigException("No se encontro una configuración válida(cantidad de items), Linea 1");
         }
