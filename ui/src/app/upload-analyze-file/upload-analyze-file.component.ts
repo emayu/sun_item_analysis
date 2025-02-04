@@ -40,6 +40,7 @@ export class UploadAnalyzeFileComponent {
   onFileChange(input:any){
     if(input?.files){
       this.selectedFile = input.files[0];
+      input.value = ''
     }
 
   }
