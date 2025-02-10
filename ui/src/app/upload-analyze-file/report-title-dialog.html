@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>¿Desea incluir un subtítulo para el reporte?</h2>
+<mat-dialog-content>
+    <mat-form-field style="width: 100%;">
+        <mat-label>Subtítulo</mat-label>
+        <input id="subtitleReport" matInput [(ngModel)]="data.subtitle" placeholder="deje en blanco si no lo desea incluir" type="text">
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Crear</button>
+    <button mat-button (click)="cancel()">Cancelar</button>
+</mat-dialog-actions>

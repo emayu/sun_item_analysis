@@ -1,5 +1,5 @@
-import { HttpClient, HttpClientModule, HttpErrorResponse } from '@angular/common/http';
-import { Component, isDevMode } from '@angular/core';
+import { HttpClient, HttpClientModule, HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { Component, isDevMode, Inject } from '@angular/core';
 import { UpdaloadFileService } from '../../services/analyze-file.service';
 import { ResponseData } from '../../models/response';
 import { CommonModule } from '@angular/common';
@@ -10,18 +10,41 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+import { MatMenuModule } from '@angular/material/menu';
+import { 
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogRef,
+  MatDialogTitle,
+  MatDialogContent,
+  MatDialogActions,
+  MatDialogClose
+ } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { ReportService } from '../../services/report.service';
+import { Observable } from 'rxjs';
+
+export interface DialogData {
+  subtitle:string;
+}
 
 @Component({
   selector: 'app-upload-analyze-file',
   standalone: true,
-  providers: [UpdaloadFileService],
+  providers: [UpdaloadFileService, ReportService],
   imports: [HttpClientModule,
     CommonModule,
     MatButtonModule,
     MatDividerModule,
     MatIconModule,
     MatTooltipModule,
-    MatProgressSpinnerModule],
+    MatProgressSpinnerModule,
+    MatMenuModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule],
   templateUrl: './upload-analyze-file.component.html',
   styleUrl: './upload-analyze-file.component.scss'
 })
@@ -29,12 +52,14 @@ export class UploadAnalyzeFileComponent {
   
   selectedFile:File | null = null;
   isSending = false;
-  proccedData:ResponseData | null =  null;
+  proccededData:ResponseData | null =  null;
   isDevMode = isDevMode();
 
   constructor(
     private processFileService:UpdaloadFileService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private reportingService:ReportService,
+    public dialog: MatDialog
   ){}
 
   onFileChange(input:any){
@@ -45,24 +70,44 @@ export class UploadAnalyzeFileComponent {
 
   }
 
+  private downloadBlobToFile(blob: Blob, fileName: string) {
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
+  }
+
+  
+
   downloadTextFile(){
-    if (this.proccedData) {
-      const fileName = this.proccedData?.data.source.split('.')[0];
-      const blob = new Blob([this.proccedData.textReport], { type: 'text/plain' });
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `${fileName}-resultado.txt`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      window.URL.revokeObjectURL(url);
+    if (this.proccededData) {
+      const originalFileName = this.proccededData?.data.source.split('.')[0];
+      const blob = new Blob([this.proccededData.textReport], { type: 'text/plain' });
+      const fileName = `${originalFileName}-resultado.txt`;
+      this.downloadBlobToFile(blob,fileName);
+    }
+  }
+
+  private showErrors(error: any) {
+    console.error('error:', error);
+    this.isSending = false;
+    if (error instanceof HttpErrorResponse) {
+      console.log('is HttpErrorResponse');
+    }
+    if (error.error && error.error.message) {
+      this._snackBar.open(`Error:\n${error.error.message}`, "Cerrar", { panelClass: "snackbar-error" });
+    } else {
+      this._snackBar.open(`Ocurrió un error`, "Cerrar", { panelClass: "snackbar-error" });
     }
   }
 
   onSubmit(){
     if(this.selectedFile){
-      this.proccedData = null;
+      this.proccededData = null;
       const formData = new FormData();
       formData.append('file', this.selectedFile);
       console.log('sending');
@@ -72,19 +117,10 @@ export class UploadAnalyzeFileComponent {
         next: (response) => {
           console.log('server response:', response.status);
           this._snackBar.open("Completado", "", {duration:2500});
-          this.proccedData = response;
+          this.proccededData = response;
         },
         error: (err) => {
-          console.error('error:', err);
-          this.isSending = false;
-          if(err instanceof HttpErrorResponse){
-            console.log('is HttpErrorResponse');
-          }
-          if(err.error && err.error.message){
-            this._snackBar.open(`Error:\n${err.error.message}`, "Cerrar", {panelClass: "snackbar-error"});
-          }else{
-            this._snackBar.open(`Ocurrió un error`, "Cerrar", {panelClass: "snackbar-error"});
-          }
+          this.showErrors(err);
         },
         complete:() =>{
           this.isSending = false;
@@ -93,4 +129,122 @@ export class UploadAnalyzeFileComponent {
     }
   }
 
+  private generatePDF(service: Observable<HttpResponse<Blob>>){
+    this.isSending = true;
+    service.subscribe({
+      next: (response) => {
+        this.isSending = false;
+        console.log(response);
+        const contentDisposition = response.headers.get('Content-Disposition');
+        console.log(contentDisposition);
+        let fileName = "reporte.xlsx";
+        if(contentDisposition){
+          const match = contentDisposition.match(/filename="(.+)"/);
+          if(match){
+            fileName = match[1];
+          }
+        }
+        const url = window.URL.createObjectURL(response.body as Blob);
+        const newWindow = window.open(url)!;
+        setTimeout(()=> newWindow.document.title=fileName, 500);
+      },
+      error: (err) => {
+        this.showErrors(err);
+      }
+    })
+  }
+
+
+  generateScoreDistributionPDF(){
+    if(this.proccededData){
+      const observable = this.reportingService.downloadScoreDistributionReportPDF(this.proccededData.data);
+      this.generatePDF(observable);
+    }
+  }
+
+  private generateXLS(service: Observable<HttpResponse<Blob>>){
+    this.isSending = true;
+    service.subscribe({
+        next: (response) => {
+          this.isSending = false;
+          console.log(response);
+          const contentDisposition = response.headers.get('Content-Disposition');
+          console.log(contentDisposition);
+          let fileName = "reporte.xlsx";
+          if(contentDisposition){
+            const match = contentDisposition.match(/filename="(.+)"/);
+            if(match){
+              fileName = match[1];
+            }
+          }
+          this.downloadBlobToFile(response.body as Blob, fileName);
+        },
+        error: (err) => {
+          this.showErrors(err);
+        }
+      })
+  }
+
+  generateScoreDistributionReportXLS(){
+    if(this.proccededData){
+      const obs =  this.reportingService.downloadScoreDistributionReportXls(this.proccededData.data)
+      this.generateXLS(obs);
+    }
+  }
+
+  generateResultReportPDF() {
+    if (this.proccededData) {
+      const dialogRef = this.dialog.open(ReportTitleDialog, { data: { subtitle: "" } });
+      const self = this;
+      dialogRef.afterClosed().subscribe( (result:DialogData) => {
+        if(result){
+          const observable = this.reportingService.downloadResultReporPDF(result.subtitle, self.proccededData!.data);
+          this.generatePDF(observable);
+        }
+      });
+    }
+  }
+
+  generateResultReporXLS(){
+    if (this.proccededData) {
+      const dialogRef = this.dialog.open(ReportTitleDialog, { data: { subtitle: "" } });
+      const self = this;
+      dialogRef.afterClosed().subscribe( (result:DialogData) => {
+        if(result){
+          const observable = this.reportingService.downloadResultReporXLS(result.subtitle, self.proccededData!.data);
+          this.generateXLS(observable);
+        }
+      });
+    }
+  }
+
+}
+@Component({
+  selector:'report-title-dialog',
+  templateUrl:'report-title-dialog.html',
+  standalone:true,
+  imports:[ 
+    MatFormFieldModule,
+    MatInputModule, 
+    FormsModule, 
+    MatButtonModule,
+    MatButtonModule, 
+    MatDialogTitle, 
+    MatDialogContent, 
+    MatDialogActions, 
+    MatDialogClose]
+})
+export class ReportTitleDialog{
+
+  subtitle:string|null = null;
+
+  constructor(public dialogRef:MatDialogRef<ReportTitleDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData
+  ){}
+
+  cancel(){
+    this.dialogRef.close();
+  }
+
+  
 }

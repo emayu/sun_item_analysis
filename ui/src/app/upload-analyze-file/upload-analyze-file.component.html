@@ -16,14 +16,35 @@
     <mat-spinner diameter="30"></mat-spinner>
     <a>Procesando</a>
 </div>
-<div *ngIf="proccedData">
+<div *ngIf="proccededData">
     <h3>Resultado:</h3>
     <button mat-icon-button matTooltip="Descargar archivo texto" (click)="downloadTextFile()">
         <mat-icon>download</mat-icon>
     </button>
-    <button *ngIf="isDevMode" mat-icon-button><mat-icon>more_vert</mat-icon></button>
+    <button  mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="generateScoreDistributionPDF()">
+            <mat-icon>picture_as_pdf</mat-icon>
+            <span>Generar informe distribución de puntuaciones</span>
+        </button>
+        <button mat-menu-item (click)="generateScoreDistributionReportXLS()">
+            <mat-icon>save_alt</mat-icon>
+            <span>en XLS</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item  (click)="generateResultReportPDF()" >
+            <mat-icon>picture_as_pdf</mat-icon>
+            <span>Generar informe de resultados</span>
+        </button>
+        <button mat-menu-item (click)="generateResultReporXLS()">
+            <mat-icon>save_alt</mat-icon>
+            <span>XLS</span>
+        </button>
+    </mat-menu>
     <mat-divider></mat-divider>
-    <pre>{{ proccedData.textReport }}</pre>
+    <pre>{{ proccededData.textReport }}</pre>
     <mat-divider></mat-divider>
     <button mat-icon-button matTooltip="Descargar archivo texto" (click)="downloadTextFile()">
         <mat-icon>download</mat-icon>
