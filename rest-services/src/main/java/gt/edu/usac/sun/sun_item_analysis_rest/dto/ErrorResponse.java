@@ -4,8 +4,6 @@
  */
 package gt.edu.usac.sun.sun_item_analysis_rest.dto;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.util.Date;
 import org.springframework.http.HttpStatus;
 

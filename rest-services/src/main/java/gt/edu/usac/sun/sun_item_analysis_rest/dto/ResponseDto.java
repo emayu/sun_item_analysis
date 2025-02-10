@@ -4,8 +4,6 @@
  */
 package gt.edu.usac.sun.sun_item_analysis_rest.dto;
 
-import gt.edu.usac.sun.item_analysis_tool.model.TestProccedData;
-
 /**
  *
  * @author emayu

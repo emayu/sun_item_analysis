@@ -9,15 +9,12 @@ import gt.edu.usac.sun.item_analysis_tool.analysis.exceptions.ReadAnswerExceptio
 import gt.edu.usac.sun.sun_item_analysis_rest.dto.ErrorResponse;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.Map;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.multipart.MaxUploadSizeExceededException;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 /**
  *
