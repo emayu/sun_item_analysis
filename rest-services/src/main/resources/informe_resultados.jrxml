@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_Letter_Landscape" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="708" leftMargin="42" rightMargin="42" topMargin="20" bottomMargin="20" uuid="5d70f303-3be6-40f0-b994-117952cf72c9">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_analized_Adapter"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="subtitle" class="java.lang.String"/>
+	<queryString language="json">
+		<![CDATA[]]>
+	</queryString>
+	<field name="itemsNumberConfig" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="itemsNumberConfig"/>
+		<fieldDescription><![CDATA[itemsNumberConfig]]></fieldDescription>
+	</field>
+	<field name="itemsForAnalize" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="itemsForAnalize"/>
+		<fieldDescription><![CDATA[itemsForAnalize]]></fieldDescription>
+	</field>
+	<field name="itemKeyConfig" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="itemKeyConfig"/>
+		<fieldDescription><![CDATA[itemKeyConfig]]></fieldDescription>
+	</field>
+	<field name="source" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="source"/>
+		<fieldDescription><![CDATA[source]]></fieldDescription>
+	</field>
+	<field name="examineesCount" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="examineesCount"/>
+		<fieldDescription><![CDATA[examineesCount]]></fieldDescription>
+	</field>
+	<field name="frecuency" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="frecuency"/>
+		<fieldDescription><![CDATA[frecuency]]></fieldDescription>
+	</field>
+	<field name="answerdFounds" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="answerdFounds"/>
+		<fieldDescription><![CDATA[answerdFounds]]></fieldDescription>
+	</field>
+	<field name="itemKeyCount" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="itemKeyCount"/>
+		<fieldDescription><![CDATA[itemKeyCount]]></fieldDescription>
+	</field>
+	<field name="duration" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="duration"/>
+		<fieldDescription><![CDATA[duration]]></fieldDescription>
+	</field>
+	<field name="scoreResumen" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="scoreResumen"/>
+		<fieldDescription><![CDATA[scoreResumen]]></fieldDescription>
+	</field>
+	<field name="itemResponseStatics" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="itemResponseStatics"/>
+		<fieldDescription><![CDATA[itemResponseStatics]]></fieldDescription>
+	</field>
+	<title>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="260" height="49" uuid="790909ee-c37d-461c-8748-dc8ef24fa06e"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Universidad de San Carlos de Guatemala
+Dirección General de Docencia -DIGED-
+Sistema de Ubicación y Nivelación -SUN-]]></text>
+			</staticText>
+			<image hAlign="Right">
+				<reportElement x="530" y="0" width="180" height="50" uuid="7eb19d84-46c9-4f50-ab10-b4eeb5a1a20a"/>
+				<imageExpression><![CDATA["logo_USAC_SUNcolor.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="120" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="224" y="49" width="260" height="20" isRemoveLineWhenBlank="true" uuid="7ac5642e-ce3f-41d3-89e3-269cab334def">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{subtitle}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="89" width="118" height="31" uuid="408a31ee-e1f1-4453-9d1a-138e42217abb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Fuente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="236" y="89" width="118" height="31" uuid="a5e73e13-b890-4029-9aa9-d8f98f01ef34">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Total de aspirantes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="472" y="89" width="118" height="31" uuid="e3d63bb4-e475-4962-b2af-6504d5342d32">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Cantidad de Ítems]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="118" y="89" width="118" height="31" uuid="cd0e1e4a-8773-4f3c-a674-c9e1dace1505">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{source}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="354" y="89" width="118" height="31" uuid="f196fdee-8375-4e1f-a2e3-2da06030e497">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{examineesCount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="590" y="89" width="118" height="31" uuid="7c22d52e-1963-475e-a229-1fcc2e597522"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{itemsForAnalize}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="224" y="29" width="260" height="20" uuid="760d98c8-a918-4b3a-a810-af4504b85133">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informe de Resultados]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="224" y="69" width="260" height="20" uuid="6d1152fe-7426-44f3-bac5-80b664f1be60">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="140" splitType="Stretch">
+			<subreport>
+				<reportElement x="-42" y="20" width="792" height="120" uuid="d0c95f0d-6760-451e-aa11-bc39b8b48cf1">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("scoreResumen.scoreResumen")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["informe_resultados_sub_report.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="518" y="0" width="190" height="30" uuid="fd6d9747-2817-4af7-865a-37aace536067"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Generado el " + new SimpleDateFormat("dd-MMM-yyy HH:mm").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

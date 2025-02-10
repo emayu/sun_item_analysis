@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_Letter_sub_report" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0" uuid="818fcc65-aa56-4fbe-8e37-e63fedbb2003">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_analized_Adapter"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<queryString language="json">
+		<![CDATA[scoreResumen.scoreResumen]]>
+	</queryString>
+	<field name="correctNumber" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="correctNumber"/>
+		<fieldDescription><![CDATA[correctNumber]]></fieldDescription>
+	</field>
+	<field name="frequency" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="frequency"/>
+		<fieldDescription><![CDATA[frequency]]></fieldDescription>
+	</field>
+	<field name="cumulativeFrecuency" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="cumulativeFrecuency"/>
+		<fieldDescription><![CDATA[cumulativeFrecuency]]></fieldDescription>
+	</field>
+	<field name="approvedCount" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="approvedCount"/>
+		<fieldDescription><![CDATA[approvedCount]]></fieldDescription>
+	</field>
+	<field name="approvedPercentage" class="java.lang.Double">
+		<property name="net.sf.jasperreports.json.field.expression" value="approvedPercentage"/>
+		<fieldDescription><![CDATA[approvedPercentage]]></fieldDescription>
+	</field>
+	<field name="pct" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="pct"/>
+		<fieldDescription><![CDATA[pct]]></fieldDescription>
+	</field>
+	<field name="score" class="java.lang.Double">
+		<property name="net.sf.jasperreports.json.field.expression" value="score"/>
+		<fieldDescription><![CDATA[score]]></fieldDescription>
+	</field>
+	<field name="approved" class="java.lang.Boolean">
+		<property name="net.sf.jasperreports.json.field.expression" value="approved"/>
+		<fieldDescription><![CDATA[approved]]></fieldDescription>
+	</field>
+	<field name="pctInt" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="pctInt"/>
+		<fieldDescription><![CDATA[pctInt]]></fieldDescription>
+	</field>
+	<sortField name="correctNumber"/>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="95" height="20" uuid="02478929-f33a-40a1-b39c-072c020da9bd">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ítems]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="0" width="95" height="20" uuid="dc7b2076-3560-4caa-ae1a-c4f3d64cc05c"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[No. de aspirantes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="0" width="95" height="20" uuid="ece0cd02-b685-405d-99d9-5462cc451808"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="0" width="95" height="20" uuid="0863194b-3eab-4687-9d25-519cfe6e6299"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Punteo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="0" width="95" height="20" uuid="ba657be3-a561-4de5-815f-efa33382058b"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="0" width="95" height="20" uuid="875ee66d-37d2-44fe-ad13-dec304811de0">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Frecuencia]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="95" height="15" uuid="c1e3a7b5-1db2-45a3-93ec-febd40d8951b"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{correctNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="0" width="95" height="15" uuid="fb880f80-99d8-4402-b0f8-1e79240c2887">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{approvedCount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="0" width="95" height="15" uuid="6029d4aa-daca-4f86-9c09-9e760b27da36"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[String.format("%6.2f",$F{approvedPercentage})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="0" width="95" height="15" uuid="603097df-aa6f-4aaa-9088-47e0a3190117"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[String.format("%6.2f",$F{score})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="475" y="0" width="95" height="15" uuid="7c98f986-901d-4caa-84d5-8f6fd4a80583"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{approved}?"SATISFACTORIO":""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="95" y="0" width="95" height="15" uuid="f68ec5c4-69d6-428a-a2cf-4cc8988bb778">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{frequency}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

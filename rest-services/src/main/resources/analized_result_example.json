@@ -1,0 +1,2440 @@
+{
+        "itemsNumberConfig": 40,
+        "itemsForAnalize": 40,
+        "itemKeyConfig": [
+            {
+                "value": "B",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "C",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "D",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "B",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "A",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "C",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "D",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "B",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "B",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "D",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "A",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "B",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "B",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "D",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "B",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "B",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "C",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "D",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "A",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "B",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "D",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "A",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "B",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "B",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "A",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "C",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "A",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "B",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "A",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "D",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "C",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "C",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "C",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "A",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "C",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "A",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "C",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "C",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "A",
+                "activated": true,
+                "amount": 4
+            },
+            {
+                "value": "B",
+                "activated": true,
+                "amount": 4
+            }
+        ],
+        "source": "L502.txt",
+        "examineesCount": 3810,
+        "frecuency": [
+            4,
+            3,
+            1,
+            1,
+            1,
+            2,
+            1,
+            2,
+            4,
+            4,
+            8,
+            4,
+            9,
+            6,
+            17,
+            18,
+            18,
+            29,
+            43,
+            48,
+            61,
+            95,
+            113,
+            119,
+            161,
+            170,
+            193,
+            216,
+            247,
+            313,
+            299,
+            305,
+            315,
+            296,
+            254,
+            183,
+            132,
+            72,
+            37,
+            6,
+            0
+        ],
+        "answerdFounds": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "Z"
+        ],
+        "itemKeyCount": [
+            {
+                "A": 366,
+                "B": 2491,
+                "C": 662,
+                "D": 272,
+                "Z": 19
+            },
+            {
+                "A": 159,
+                "B": 1581,
+                "C": 1007,
+                "D": 1056,
+                "Z": 7
+            },
+            {
+                "A": 1794,
+                "B": 644,
+                "C": 508,
+                "D": 851,
+                "Z": 13
+            },
+            {
+                "A": 415,
+                "B": 2072,
+                "C": 508,
+                "D": 807,
+                "Z": 8
+            },
+            {
+                "A": 3001,
+                "B": 440,
+                "C": 206,
+                "D": 156,
+                "Z": 7
+            },
+            {
+                "A": 73,
+                "B": 311,
+                "C": 2009,
+                "D": 1406,
+                "Z": 11
+            },
+            {
+                "A": 660,
+                "B": 409,
+                "C": 440,
+                "D": 2291,
+                "Z": 10
+            },
+            {
+                "A": 248,
+                "B": 1928,
+                "C": 1480,
+                "D": 143,
+                "Z": 11
+            },
+            {
+                "A": 162,
+                "B": 3600,
+                "C": 6,
+                "D": 32,
+                "Z": 10
+            },
+            {
+                "A": 583,
+                "B": 455,
+                "C": 441,
+                "D": 2321,
+                "Z": 10
+            },
+            {
+                "A": 3350,
+                "B": 91,
+                "C": 210,
+                "D": 141,
+                "Z": 18
+            },
+            {
+                "A": 823,
+                "B": 2634,
+                "C": 34,
+                "D": 306,
+                "Z": 13
+            },
+            {
+                "A": 228,
+                "B": 3285,
+                "C": 53,
+                "D": 230,
+                "Z": 14
+            },
+            {
+                "A": 270,
+                "B": 190,
+                "C": 518,
+                "D": 2820,
+                "Z": 12
+            },
+            {
+                "A": 298,
+                "B": 2606,
+                "C": 560,
+                "D": 329,
+                "Z": 17
+            },
+            {
+                "A": 456,
+                "B": 3024,
+                "C": 130,
+                "D": 176,
+                "Z": 24
+            },
+            {
+                "A": 319,
+                "B": 13,
+                "C": 2625,
+                "D": 833,
+                "Z": 20
+            },
+            {
+                "A": 173,
+                "B": 241,
+                "C": 240,
+                "D": 3127,
+                "Z": 29
+            },
+            {
+                "A": 2136,
+                "B": 924,
+                "C": 494,
+                "D": 238,
+                "Z": 18
+            },
+            {
+                "A": 428,
+                "B": 3169,
+                "C": 83,
+                "D": 105,
+                "Z": 25
+            },
+            {
+                "A": 126,
+                "B": 148,
+                "C": 366,
+                "D": 3138,
+                "Z": 32
+            },
+            {
+                "A": 3129,
+                "B": 45,
+                "C": 537,
+                "D": 66,
+                "Z": 33
+            },
+            {
+                "A": 128,
+                "B": 3630,
+                "C": 26,
+                "D": 3,
+                "Z": 23
+            },
+            {
+                "A": 489,
+                "B": 2160,
+                "C": 378,
+                "D": 756,
+                "Z": 27
+            },
+            {
+                "A": 2827,
+                "B": 244,
+                "C": 514,
+                "D": 186,
+                "Z": 39
+            },
+            {
+                "A": 272,
+                "B": 120,
+                "C": 3222,
+                "D": 142,
+                "Z": 54
+            },
+            {
+                "A": 3093,
+                "B": 194,
+                "C": 377,
+                "D": 113,
+                "Z": 33
+            },
+            {
+                "A": 85,
+                "B": 3524,
+                "C": 19,
+                "D": 148,
+                "Z": 34
+            },
+            {
+                "A": 2221,
+                "B": 1139,
+                "C": 53,
+                "D": 362,
+                "Z": 35
+            },
+            {
+                "A": 574,
+                "B": 385,
+                "C": 1222,
+                "D": 1589,
+                "Z": 40
+            },
+            {
+                "A": 88,
+                "B": 76,
+                "C": 3285,
+                "D": 316,
+                "Z": 45
+            },
+            {
+                "A": 112,
+                "B": 192,
+                "C": 3382,
+                "D": 80,
+                "Z": 44
+            },
+            {
+                "A": 44,
+                "B": 483,
+                "C": 2637,
+                "D": 493,
+                "Z": 153
+            },
+            {
+                "A": 3306,
+                "B": 89,
+                "C": 202,
+                "D": 139,
+                "Z": 74
+            },
+            {
+                "A": 129,
+                "B": 26,
+                "C": 3543,
+                "D": 35,
+                "Z": 77
+            },
+            {
+                "A": 3168,
+                "B": 265,
+                "C": 95,
+                "D": 194,
+                "Z": 88
+            },
+            {
+                "A": 66,
+                "B": 305,
+                "C": 3095,
+                "D": 244,
+                "Z": 100
+            },
+            {
+                "A": 368,
+                "B": 1135,
+                "C": 2101,
+                "D": 83,
+                "Z": 123
+            },
+            {
+                "A": 2523,
+                "B": 370,
+                "C": 606,
+                "D": 172,
+                "Z": 139
+            },
+            {
+                "A": 63,
+                "B": 3240,
+                "C": 76,
+                "D": 354,
+                "Z": 77
+            }
+        ],
+        "duration": "PT0.2059998S",
+        "scoreResumen": {
+            "scoreResumen": [
+                {
+                    "correctNumber": 0,
+                    "frequency": 4,
+                    "cumulativeFrecuency": 4,
+                    "approvedCount": 3810,
+                    "approvedPercentage": 100.0,
+                    "pct": 0.10498687664041995,
+                    "score": 0.0,
+                    "approved": false,
+                    "pctInt": 0
+                },
+                {
+                    "correctNumber": 1,
+                    "frequency": 3,
+                    "cumulativeFrecuency": 7,
+                    "approvedCount": 3806,
+                    "approvedPercentage": 99.89501312335958,
+                    "pct": 0.07874015748031496,
+                    "score": 2.5,
+                    "approved": false,
+                    "pctInt": 0
+                },
+                {
+                    "correctNumber": 2,
+                    "frequency": 1,
+                    "cumulativeFrecuency": 8,
+                    "approvedCount": 3803,
+                    "approvedPercentage": 99.81627296587926,
+                    "pct": 0.026246719160104987,
+                    "score": 5.0,
+                    "approved": false,
+                    "pctInt": 0
+                },
+                {
+                    "correctNumber": 3,
+                    "frequency": 1,
+                    "cumulativeFrecuency": 9,
+                    "approvedCount": 3802,
+                    "approvedPercentage": 99.79002624671917,
+                    "pct": 0.026246719160104987,
+                    "score": 7.5,
+                    "approved": false,
+                    "pctInt": 0
+                },
+                {
+                    "correctNumber": 4,
+                    "frequency": 1,
+                    "cumulativeFrecuency": 10,
+                    "approvedCount": 3801,
+                    "approvedPercentage": 99.76377952755905,
+                    "pct": 0.026246719160104987,
+                    "score": 10.0,
+                    "approved": false,
+                    "pctInt": 0
+                },
+                {
+                    "correctNumber": 5,
+                    "frequency": 2,
+                    "cumulativeFrecuency": 12,
+                    "approvedCount": 3800,
+                    "approvedPercentage": 99.73753280839895,
+                    "pct": 0.05249343832020997,
+                    "score": 12.5,
+                    "approved": false,
+                    "pctInt": 0
+                },
+                {
+                    "correctNumber": 6,
+                    "frequency": 1,
+                    "cumulativeFrecuency": 13,
+                    "approvedCount": 3798,
+                    "approvedPercentage": 99.68503937007874,
+                    "pct": 0.026246719160104987,
+                    "score": 15.0,
+                    "approved": false,
+                    "pctInt": 0
+                },
+                {
+                    "correctNumber": 7,
+                    "frequency": 2,
+                    "cumulativeFrecuency": 15,
+                    "approvedCount": 3797,
+                    "approvedPercentage": 99.65879265091864,
+                    "pct": 0.05249343832020997,
+                    "score": 17.5,
+                    "approved": false,
+                    "pctInt": 0
+                },
+                {
+                    "correctNumber": 8,
+                    "frequency": 4,
+                    "cumulativeFrecuency": 19,
+                    "approvedCount": 3795,
+                    "approvedPercentage": 99.60629921259843,
+                    "pct": 0.10498687664041995,
+                    "score": 20.0,
+                    "approved": false,
+                    "pctInt": 0
+                },
+                {
+                    "correctNumber": 9,
+                    "frequency": 4,
+                    "cumulativeFrecuency": 23,
+                    "approvedCount": 3791,
+                    "approvedPercentage": 99.501312335958,
+                    "pct": 0.10498687664041995,
+                    "score": 22.5,
+                    "approved": false,
+                    "pctInt": 0
+                },
+                {
+                    "correctNumber": 10,
+                    "frequency": 8,
+                    "cumulativeFrecuency": 31,
+                    "approvedCount": 3787,
+                    "approvedPercentage": 99.39632545931758,
+                    "pct": 0.2099737532808399,
+                    "score": 25.0,
+                    "approved": false,
+                    "pctInt": 0
+                },
+                {
+                    "correctNumber": 11,
+                    "frequency": 4,
+                    "cumulativeFrecuency": 35,
+                    "approvedCount": 3779,
+                    "approvedPercentage": 99.18635170603675,
+                    "pct": 0.10498687664041995,
+                    "score": 27.5,
+                    "approved": false,
+                    "pctInt": 0
+                },
+                {
+                    "correctNumber": 12,
+                    "frequency": 9,
+                    "cumulativeFrecuency": 44,
+                    "approvedCount": 3775,
+                    "approvedPercentage": 99.08136482939632,
+                    "pct": 0.23622047244094488,
+                    "score": 30.0,
+                    "approved": false,
+                    "pctInt": 0
+                },
+                {
+                    "correctNumber": 13,
+                    "frequency": 6,
+                    "cumulativeFrecuency": 50,
+                    "approvedCount": 3766,
+                    "approvedPercentage": 98.84514435695539,
+                    "pct": 0.15748031496062992,
+                    "score": 32.5,
+                    "approved": false,
+                    "pctInt": 0
+                },
+                {
+                    "correctNumber": 14,
+                    "frequency": 17,
+                    "cumulativeFrecuency": 67,
+                    "approvedCount": 3760,
+                    "approvedPercentage": 98.68766404199475,
+                    "pct": 0.4461942257217848,
+                    "score": 35.0,
+                    "approved": false,
+                    "pctInt": 0
+                },
+                {
+                    "correctNumber": 15,
+                    "frequency": 18,
+                    "cumulativeFrecuency": 85,
+                    "approvedCount": 3743,
+                    "approvedPercentage": 98.24146981627297,
+                    "pct": 0.47244094488188976,
+                    "score": 37.5,
+                    "approved": false,
+                    "pctInt": 0
+                },
+                {
+                    "correctNumber": 16,
+                    "frequency": 18,
+                    "cumulativeFrecuency": 103,
+                    "approvedCount": 3725,
+                    "approvedPercentage": 97.76902887139107,
+                    "pct": 0.47244094488188976,
+                    "score": 40.0,
+                    "approved": false,
+                    "pctInt": 0
+                },
+                {
+                    "correctNumber": 17,
+                    "frequency": 29,
+                    "cumulativeFrecuency": 132,
+                    "approvedCount": 3707,
+                    "approvedPercentage": 97.29658792650919,
+                    "pct": 0.7611548556430446,
+                    "score": 42.5,
+                    "approved": false,
+                    "pctInt": 1
+                },
+                {
+                    "correctNumber": 18,
+                    "frequency": 43,
+                    "cumulativeFrecuency": 175,
+                    "approvedCount": 3678,
+                    "approvedPercentage": 96.53543307086615,
+                    "pct": 1.1286089238845145,
+                    "score": 45.0,
+                    "approved": false,
+                    "pctInt": 1
+                },
+                {
+                    "correctNumber": 19,
+                    "frequency": 48,
+                    "cumulativeFrecuency": 223,
+                    "approvedCount": 3635,
+                    "approvedPercentage": 95.40682414698163,
+                    "pct": 1.2598425196850394,
+                    "score": 47.5,
+                    "approved": false,
+                    "pctInt": 1
+                },
+                {
+                    "correctNumber": 20,
+                    "frequency": 61,
+                    "cumulativeFrecuency": 284,
+                    "approvedCount": 3587,
+                    "approvedPercentage": 94.14698162729658,
+                    "pct": 1.601049868766404,
+                    "score": 50.0,
+                    "approved": false,
+                    "pctInt": 2
+                },
+                {
+                    "correctNumber": 21,
+                    "frequency": 95,
+                    "cumulativeFrecuency": 379,
+                    "approvedCount": 3526,
+                    "approvedPercentage": 92.54593175853019,
+                    "pct": 2.493438320209974,
+                    "score": 52.5,
+                    "approved": false,
+                    "pctInt": 2
+                },
+                {
+                    "correctNumber": 22,
+                    "frequency": 113,
+                    "cumulativeFrecuency": 492,
+                    "approvedCount": 3431,
+                    "approvedPercentage": 90.05249343832021,
+                    "pct": 2.9658792650918637,
+                    "score": 55.0,
+                    "approved": false,
+                    "pctInt": 3
+                },
+                {
+                    "correctNumber": 23,
+                    "frequency": 119,
+                    "cumulativeFrecuency": 611,
+                    "approvedCount": 3318,
+                    "approvedPercentage": 87.08661417322834,
+                    "pct": 3.1233595800524934,
+                    "score": 57.5,
+                    "approved": false,
+                    "pctInt": 3
+                },
+                {
+                    "correctNumber": 24,
+                    "frequency": 161,
+                    "cumulativeFrecuency": 772,
+                    "approvedCount": 3199,
+                    "approvedPercentage": 83.96325459317585,
+                    "pct": 4.225721784776903,
+                    "score": 60.0,
+                    "approved": false,
+                    "pctInt": 4
+                },
+                {
+                    "correctNumber": 25,
+                    "frequency": 170,
+                    "cumulativeFrecuency": 942,
+                    "approvedCount": 3038,
+                    "approvedPercentage": 79.73753280839895,
+                    "pct": 4.4619422572178475,
+                    "score": 62.5,
+                    "approved": true,
+                    "pctInt": 4
+                },
+                {
+                    "correctNumber": 26,
+                    "frequency": 193,
+                    "cumulativeFrecuency": 1135,
+                    "approvedCount": 2868,
+                    "approvedPercentage": 75.2755905511811,
+                    "pct": 5.065616797900263,
+                    "score": 65.0,
+                    "approved": true,
+                    "pctInt": 5
+                },
+                {
+                    "correctNumber": 27,
+                    "frequency": 216,
+                    "cumulativeFrecuency": 1351,
+                    "approvedCount": 2675,
+                    "approvedPercentage": 70.20997375328083,
+                    "pct": 5.669291338582677,
+                    "score": 67.5,
+                    "approved": true,
+                    "pctInt": 6
+                },
+                {
+                    "correctNumber": 28,
+                    "frequency": 247,
+                    "cumulativeFrecuency": 1598,
+                    "approvedCount": 2459,
+                    "approvedPercentage": 64.54068241469817,
+                    "pct": 6.482939632545932,
+                    "score": 70.0,
+                    "approved": true,
+                    "pctInt": 6
+                },
+                {
+                    "correctNumber": 29,
+                    "frequency": 313,
+                    "cumulativeFrecuency": 1911,
+                    "approvedCount": 2212,
+                    "approvedPercentage": 58.05774278215223,
+                    "pct": 8.215223097112862,
+                    "score": 72.5,
+                    "approved": true,
+                    "pctInt": 8
+                },
+                {
+                    "correctNumber": 30,
+                    "frequency": 299,
+                    "cumulativeFrecuency": 2210,
+                    "approvedCount": 1899,
+                    "approvedPercentage": 49.84251968503937,
+                    "pct": 7.847769028871391,
+                    "score": 75.0,
+                    "approved": true,
+                    "pctInt": 8
+                },
+                {
+                    "correctNumber": 31,
+                    "frequency": 305,
+                    "cumulativeFrecuency": 2515,
+                    "approvedCount": 1600,
+                    "approvedPercentage": 41.99475065616798,
+                    "pct": 8.005249343832022,
+                    "score": 77.5,
+                    "approved": true,
+                    "pctInt": 8
+                },
+                {
+                    "correctNumber": 32,
+                    "frequency": 315,
+                    "cumulativeFrecuency": 2830,
+                    "approvedCount": 1295,
+                    "approvedPercentage": 33.98950131233596,
+                    "pct": 8.26771653543307,
+                    "score": 80.0,
+                    "approved": true,
+                    "pctInt": 8
+                },
+                {
+                    "correctNumber": 33,
+                    "frequency": 296,
+                    "cumulativeFrecuency": 3126,
+                    "approvedCount": 980,
+                    "approvedPercentage": 25.721784776902886,
+                    "pct": 7.769028871391076,
+                    "score": 82.5,
+                    "approved": true,
+                    "pctInt": 8
+                },
+                {
+                    "correctNumber": 34,
+                    "frequency": 254,
+                    "cumulativeFrecuency": 3380,
+                    "approvedCount": 684,
+                    "approvedPercentage": 17.95275590551181,
+                    "pct": 6.666666666666667,
+                    "score": 85.0,
+                    "approved": true,
+                    "pctInt": 7
+                },
+                {
+                    "correctNumber": 35,
+                    "frequency": 183,
+                    "cumulativeFrecuency": 3563,
+                    "approvedCount": 430,
+                    "approvedPercentage": 11.286089238845145,
+                    "pct": 4.803149606299213,
+                    "score": 87.5,
+                    "approved": true,
+                    "pctInt": 5
+                },
+                {
+                    "correctNumber": 36,
+                    "frequency": 132,
+                    "cumulativeFrecuency": 3695,
+                    "approvedCount": 247,
+                    "approvedPercentage": 6.482939632545932,
+                    "pct": 3.4645669291338583,
+                    "score": 90.0,
+                    "approved": true,
+                    "pctInt": 3
+                },
+                {
+                    "correctNumber": 37,
+                    "frequency": 72,
+                    "cumulativeFrecuency": 3767,
+                    "approvedCount": 115,
+                    "approvedPercentage": 3.0183727034120733,
+                    "pct": 1.889763779527559,
+                    "score": 92.5,
+                    "approved": true,
+                    "pctInt": 2
+                },
+                {
+                    "correctNumber": 38,
+                    "frequency": 37,
+                    "cumulativeFrecuency": 3804,
+                    "approvedCount": 43,
+                    "approvedPercentage": 1.1286089238845145,
+                    "pct": 0.9711286089238845,
+                    "score": 95.0,
+                    "approved": true,
+                    "pctInt": 1
+                },
+                {
+                    "correctNumber": 39,
+                    "frequency": 6,
+                    "cumulativeFrecuency": 3810,
+                    "approvedCount": 6,
+                    "approvedPercentage": 0.15748031496062992,
+                    "pct": 0.15748031496062992,
+                    "score": 97.5,
+                    "approved": true,
+                    "pctInt": 0
+                },
+                {
+                    "correctNumber": 40,
+                    "frequency": 0,
+                    "cumulativeFrecuency": 3810,
+                    "approvedCount": 0,
+                    "approvedPercentage": 0.0,
+                    "pct": 0.0,
+                    "score": 100.0,
+                    "approved": true,
+                    "pctInt": 0
+                }
+            ]
+        },
+        "itemResponseStatics": {
+            "statics": [
+                {
+                    "item": "item 1",
+                    "dificulty": 0.6538057742782152,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 366,
+                            "proportion": 0.09606299212598425,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 2491,
+                            "proportion": 0.6538057742782152,
+                            "isKey": true
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 662,
+                            "proportion": 0.17375328083989502,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 272,
+                            "proportion": 0.07139107611548556,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 19,
+                            "proportion": 0.0049868766404199474,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 2",
+                    "dificulty": 0.2643044619422572,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 159,
+                            "proportion": 0.04173228346456693,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 1581,
+                            "proportion": 0.4149606299212598,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 1007,
+                            "proportion": 0.2643044619422572,
+                            "isKey": true
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 1056,
+                            "proportion": 0.27716535433070866,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 7,
+                            "proportion": 0.001837270341207349,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 3",
+                    "dificulty": 0.22335958005249343,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 1794,
+                            "proportion": 0.47086614173228347,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 644,
+                            "proportion": 0.1690288713910761,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 508,
+                            "proportion": 0.13333333333333333,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 851,
+                            "proportion": 0.22335958005249343,
+                            "isKey": true
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 13,
+                            "proportion": 0.0034120734908136482,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 4",
+                    "dificulty": 0.5438320209973754,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 415,
+                            "proportion": 0.1089238845144357,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 2072,
+                            "proportion": 0.5438320209973754,
+                            "isKey": true
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 508,
+                            "proportion": 0.13333333333333333,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 807,
+                            "proportion": 0.21181102362204723,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 8,
+                            "proportion": 0.002099737532808399,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 5",
+                    "dificulty": 0.7876640419947507,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 3001,
+                            "proportion": 0.7876640419947507,
+                            "isKey": true
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 440,
+                            "proportion": 0.11548556430446194,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 206,
+                            "proportion": 0.05406824146981627,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 156,
+                            "proportion": 0.04094488188976378,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 7,
+                            "proportion": 0.001837270341207349,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 6",
+                    "dificulty": 0.5272965879265092,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 73,
+                            "proportion": 0.01916010498687664,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 311,
+                            "proportion": 0.08162729658792651,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 2009,
+                            "proportion": 0.5272965879265092,
+                            "isKey": true
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 1406,
+                            "proportion": 0.3690288713910761,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 11,
+                            "proportion": 0.0028871391076115485,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 7",
+                    "dificulty": 0.6013123359580053,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 660,
+                            "proportion": 0.1732283464566929,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 409,
+                            "proportion": 0.1073490813648294,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 440,
+                            "proportion": 0.11548556430446194,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 2291,
+                            "proportion": 0.6013123359580053,
+                            "isKey": true
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 10,
+                            "proportion": 0.0026246719160104987,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 8",
+                    "dificulty": 0.5060367454068242,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 248,
+                            "proportion": 0.06509186351706037,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 1928,
+                            "proportion": 0.5060367454068242,
+                            "isKey": true
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 1480,
+                            "proportion": 0.3884514435695538,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 143,
+                            "proportion": 0.03753280839895013,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 11,
+                            "proportion": 0.0028871391076115485,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 9",
+                    "dificulty": 0.9448818897637795,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 162,
+                            "proportion": 0.04251968503937008,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 3600,
+                            "proportion": 0.9448818897637795,
+                            "isKey": true
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 6,
+                            "proportion": 0.0015748031496062992,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 32,
+                            "proportion": 0.008398950131233596,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 10,
+                            "proportion": 0.0026246719160104987,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 10",
+                    "dificulty": 0.6091863517060367,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 583,
+                            "proportion": 0.15301837270341206,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 455,
+                            "proportion": 0.1194225721784777,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 441,
+                            "proportion": 0.115748031496063,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 2321,
+                            "proportion": 0.6091863517060367,
+                            "isKey": true
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 10,
+                            "proportion": 0.0026246719160104987,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 11",
+                    "dificulty": 0.8792650918635171,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 3350,
+                            "proportion": 0.8792650918635171,
+                            "isKey": true
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 91,
+                            "proportion": 0.023884514435695538,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 210,
+                            "proportion": 0.05511811023622047,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 141,
+                            "proportion": 0.03700787401574803,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 18,
+                            "proportion": 0.004724409448818898,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 12",
+                    "dificulty": 0.6913385826771653,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 823,
+                            "proportion": 0.21601049868766403,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 2634,
+                            "proportion": 0.6913385826771653,
+                            "isKey": true
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 34,
+                            "proportion": 0.008923884514435695,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 306,
+                            "proportion": 0.08031496062992126,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 13,
+                            "proportion": 0.0034120734908136482,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 13",
+                    "dificulty": 0.8622047244094488,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 228,
+                            "proportion": 0.05984251968503937,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 3285,
+                            "proportion": 0.8622047244094488,
+                            "isKey": true
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 53,
+                            "proportion": 0.013910761154855643,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 230,
+                            "proportion": 0.06036745406824147,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 14,
+                            "proportion": 0.003674540682414698,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 14",
+                    "dificulty": 0.7401574803149606,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 270,
+                            "proportion": 0.07086614173228346,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 190,
+                            "proportion": 0.049868766404199474,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 518,
+                            "proportion": 0.13595800524934384,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 2820,
+                            "proportion": 0.7401574803149606,
+                            "isKey": true
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 12,
+                            "proportion": 0.0031496062992125984,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 15",
+                    "dificulty": 0.6839895013123359,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 298,
+                            "proportion": 0.07821522309711286,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 2606,
+                            "proportion": 0.6839895013123359,
+                            "isKey": true
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 560,
+                            "proportion": 0.14698162729658792,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 329,
+                            "proportion": 0.08635170603674541,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 17,
+                            "proportion": 0.004461942257217848,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 16",
+                    "dificulty": 0.7937007874015748,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 456,
+                            "proportion": 0.11968503937007874,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 3024,
+                            "proportion": 0.7937007874015748,
+                            "isKey": true
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 130,
+                            "proportion": 0.03412073490813648,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 176,
+                            "proportion": 0.046194225721784776,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 24,
+                            "proportion": 0.006299212598425197,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 17",
+                    "dificulty": 0.6889763779527559,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 319,
+                            "proportion": 0.08372703412073491,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 13,
+                            "proportion": 0.0034120734908136482,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 2625,
+                            "proportion": 0.6889763779527559,
+                            "isKey": true
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 833,
+                            "proportion": 0.21863517060367454,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 20,
+                            "proportion": 0.005249343832020997,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 18",
+                    "dificulty": 0.820734908136483,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 173,
+                            "proportion": 0.04540682414698163,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 241,
+                            "proportion": 0.06325459317585302,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 240,
+                            "proportion": 0.06299212598425197,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 3127,
+                            "proportion": 0.820734908136483,
+                            "isKey": true
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 29,
+                            "proportion": 0.007611548556430446,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 19",
+                    "dificulty": 0.5606299212598426,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 2136,
+                            "proportion": 0.5606299212598426,
+                            "isKey": true
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 924,
+                            "proportion": 0.24251968503937008,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 494,
+                            "proportion": 0.12965879265091865,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 238,
+                            "proportion": 0.06246719160104987,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 18,
+                            "proportion": 0.004724409448818898,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 20",
+                    "dificulty": 0.831758530183727,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 428,
+                            "proportion": 0.11233595800524934,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 3169,
+                            "proportion": 0.831758530183727,
+                            "isKey": true
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 83,
+                            "proportion": 0.02178477690288714,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 105,
+                            "proportion": 0.027559055118110236,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 25,
+                            "proportion": 0.006561679790026247,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 21",
+                    "dificulty": 0.8236220472440945,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 126,
+                            "proportion": 0.03307086614173228,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 148,
+                            "proportion": 0.03884514435695538,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 366,
+                            "proportion": 0.09606299212598425,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 3138,
+                            "proportion": 0.8236220472440945,
+                            "isKey": true
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 32,
+                            "proportion": 0.008398950131233596,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 22",
+                    "dificulty": 0.8212598425196851,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 3129,
+                            "proportion": 0.8212598425196851,
+                            "isKey": true
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 45,
+                            "proportion": 0.011811023622047244,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 537,
+                            "proportion": 0.14094488188976378,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 66,
+                            "proportion": 0.01732283464566929,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 33,
+                            "proportion": 0.008661417322834646,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 23",
+                    "dificulty": 0.952755905511811,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 128,
+                            "proportion": 0.03359580052493438,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 3630,
+                            "proportion": 0.952755905511811,
+                            "isKey": true
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 26,
+                            "proportion": 0.0068241469816272965,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 3,
+                            "proportion": 7.874015748031496E-4,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 23,
+                            "proportion": 0.006036745406824147,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 24",
+                    "dificulty": 0.5669291338582677,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 489,
+                            "proportion": 0.1283464566929134,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 2160,
+                            "proportion": 0.5669291338582677,
+                            "isKey": true
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 378,
+                            "proportion": 0.09921259842519685,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 756,
+                            "proportion": 0.1984251968503937,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 27,
+                            "proportion": 0.007086614173228346,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 25",
+                    "dificulty": 0.7419947506561679,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 2827,
+                            "proportion": 0.7419947506561679,
+                            "isKey": true
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 244,
+                            "proportion": 0.06404199475065617,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 514,
+                            "proportion": 0.13490813648293964,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 186,
+                            "proportion": 0.048818897637795275,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 39,
+                            "proportion": 0.010236220472440945,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 26",
+                    "dificulty": 0.8456692913385827,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 272,
+                            "proportion": 0.07139107611548556,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 120,
+                            "proportion": 0.031496062992125984,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 3222,
+                            "proportion": 0.8456692913385827,
+                            "isKey": true
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 142,
+                            "proportion": 0.03727034120734908,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 54,
+                            "proportion": 0.014173228346456693,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 27",
+                    "dificulty": 0.8118110236220473,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 3093,
+                            "proportion": 0.8118110236220473,
+                            "isKey": true
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 194,
+                            "proportion": 0.050918635170603674,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 377,
+                            "proportion": 0.0989501312335958,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 113,
+                            "proportion": 0.029658792650918635,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 33,
+                            "proportion": 0.008661417322834646,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 28",
+                    "dificulty": 0.9249343832020998,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 85,
+                            "proportion": 0.02230971128608924,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 3524,
+                            "proportion": 0.9249343832020998,
+                            "isKey": true
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 19,
+                            "proportion": 0.0049868766404199474,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 148,
+                            "proportion": 0.03884514435695538,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 34,
+                            "proportion": 0.008923884514435695,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 29",
+                    "dificulty": 0.5829396325459317,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 2221,
+                            "proportion": 0.5829396325459317,
+                            "isKey": true
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 1139,
+                            "proportion": 0.2989501312335958,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 53,
+                            "proportion": 0.013910761154855643,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 362,
+                            "proportion": 0.09501312335958005,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 35,
+                            "proportion": 0.009186351706036745,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 30",
+                    "dificulty": 0.4170603674540682,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 574,
+                            "proportion": 0.15065616797900264,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 385,
+                            "proportion": 0.1010498687664042,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 1222,
+                            "proportion": 0.3207349081364829,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 1589,
+                            "proportion": 0.4170603674540682,
+                            "isKey": true
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 40,
+                            "proportion": 0.010498687664041995,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 31",
+                    "dificulty": 0.8622047244094488,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 88,
+                            "proportion": 0.023097112860892388,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 76,
+                            "proportion": 0.01994750656167979,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 3285,
+                            "proportion": 0.8622047244094488,
+                            "isKey": true
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 316,
+                            "proportion": 0.08293963254593176,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 45,
+                            "proportion": 0.011811023622047244,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 32",
+                    "dificulty": 0.8876640419947507,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 112,
+                            "proportion": 0.029396325459317585,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 192,
+                            "proportion": 0.050393700787401574,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 3382,
+                            "proportion": 0.8876640419947507,
+                            "isKey": true
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 80,
+                            "proportion": 0.02099737532808399,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 44,
+                            "proportion": 0.011548556430446194,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 33",
+                    "dificulty": 0.6921259842519685,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 44,
+                            "proportion": 0.011548556430446194,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 483,
+                            "proportion": 0.12677165354330708,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 2637,
+                            "proportion": 0.6921259842519685,
+                            "isKey": true
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 493,
+                            "proportion": 0.1293963254593176,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 153,
+                            "proportion": 0.04015748031496063,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 34",
+                    "dificulty": 0.8677165354330708,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 3306,
+                            "proportion": 0.8677165354330708,
+                            "isKey": true
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 89,
+                            "proportion": 0.023359580052493438,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 202,
+                            "proportion": 0.05301837270341207,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 139,
+                            "proportion": 0.03648293963254593,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 74,
+                            "proportion": 0.01942257217847769,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 35",
+                    "dificulty": 0.9299212598425197,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 129,
+                            "proportion": 0.03385826771653543,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 26,
+                            "proportion": 0.0068241469816272965,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 3543,
+                            "proportion": 0.9299212598425197,
+                            "isKey": true
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 35,
+                            "proportion": 0.009186351706036745,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 77,
+                            "proportion": 0.02020997375328084,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 36",
+                    "dificulty": 0.831496062992126,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 3168,
+                            "proportion": 0.831496062992126,
+                            "isKey": true
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 265,
+                            "proportion": 0.06955380577427822,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 95,
+                            "proportion": 0.024934383202099737,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 194,
+                            "proportion": 0.050918635170603674,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 88,
+                            "proportion": 0.023097112860892388,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 37",
+                    "dificulty": 0.8123359580052494,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 66,
+                            "proportion": 0.01732283464566929,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 305,
+                            "proportion": 0.08005249343832022,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 3095,
+                            "proportion": 0.8123359580052494,
+                            "isKey": true
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 244,
+                            "proportion": 0.06404199475065617,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 100,
+                            "proportion": 0.026246719160104987,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 38",
+                    "dificulty": 0.5514435695538058,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 368,
+                            "proportion": 0.09658792650918635,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 1135,
+                            "proportion": 0.2979002624671916,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 2101,
+                            "proportion": 0.5514435695538058,
+                            "isKey": true
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 83,
+                            "proportion": 0.02178477690288714,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 123,
+                            "proportion": 0.03228346456692913,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 39",
+                    "dificulty": 0.6622047244094488,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 2523,
+                            "proportion": 0.6622047244094488,
+                            "isKey": true
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 370,
+                            "proportion": 0.09711286089238845,
+                            "isKey": false
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 606,
+                            "proportion": 0.15905511811023623,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 172,
+                            "proportion": 0.04514435695538058,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 139,
+                            "proportion": 0.03648293963254593,
+                            "isKey": false
+                        }
+                    ]
+                },
+                {
+                    "item": "item 40",
+                    "dificulty": 0.8503937007874016,
+                    "responsesFrequency": [
+                        {
+                            "value": "A",
+                            "frecuency": 63,
+                            "proportion": 0.01653543307086614,
+                            "isKey": false
+                        },
+                        {
+                            "value": "B",
+                            "frecuency": 3240,
+                            "proportion": 0.8503937007874016,
+                            "isKey": true
+                        },
+                        {
+                            "value": "C",
+                            "frecuency": 76,
+                            "proportion": 0.01994750656167979,
+                            "isKey": false
+                        },
+                        {
+                            "value": "D",
+                            "frecuency": 354,
+                            "proportion": 0.09291338582677165,
+                            "isKey": false
+                        },
+                        {
+                            "value": "Z",
+                            "frecuency": 77,
+                            "proportion": 0.02020997375328084,
+                            "isKey": false
+                        }
+                    ]
+                }
+            ]
+        }
+    }

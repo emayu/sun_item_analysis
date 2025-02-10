@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_Letter" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5f67bab2-d04d-4ec4-9d2f-fe0e204a798a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JSON_analized_Adapter"/>
+	<queryString language="JSON">
+		<![CDATA[]]>
+	</queryString>
+	<field name="itemsNumberConfig" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="itemsNumberConfig"/>
+		<fieldDescription><![CDATA[itemsNumberConfig]]></fieldDescription>
+	</field>
+	<field name="itemsForAnalize" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="itemsForAnalize"/>
+		<fieldDescription><![CDATA[itemsForAnalize]]></fieldDescription>
+	</field>
+	<field name="itemKeyConfig" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="itemKeyConfig"/>
+		<fieldDescription><![CDATA[itemKeyConfig]]></fieldDescription>
+	</field>
+	<field name="source" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="source"/>
+		<fieldDescription><![CDATA[source]]></fieldDescription>
+	</field>
+	<field name="examineesCount" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="examineesCount"/>
+		<fieldDescription><![CDATA[examineesCount]]></fieldDescription>
+	</field>
+	<field name="frecuency" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="frecuency"/>
+		<fieldDescription><![CDATA[frecuency]]></fieldDescription>
+	</field>
+	<field name="answerdFounds" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="answerdFounds"/>
+		<fieldDescription><![CDATA[answerdFounds]]></fieldDescription>
+	</field>
+	<field name="itemKeyCount" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="itemKeyCount"/>
+		<fieldDescription><![CDATA[itemKeyCount]]></fieldDescription>
+	</field>
+	<field name="duration" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="duration"/>
+		<fieldDescription><![CDATA[duration]]></fieldDescription>
+	</field>
+	<field name="scoreResumen" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="scoreResumen"/>
+		<fieldDescription><![CDATA[scoreResumen]]></fieldDescription>
+	</field>
+	<field name="itemResponseStatics" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="itemResponseStatics"/>
+		<fieldDescription><![CDATA[itemResponseStatics]]></fieldDescription>
+	</field>
+	<title>
+		<band height="65">
+			<staticText>
+				<reportElement x="0" y="0" width="572" height="65" uuid="70fd6d49-d882-45db-abbc-bbbf00e6a271">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Universidad de San Carlos de Guatemala
+Dirección General de Docencia -DIGED-
+Sistema de Ubicación y Nivelación -SUN-
+Reporte de distribución de puntuaciones]]></text>
+			</staticText>
+			<image hAlign="Right">
+				<reportElement x="372" y="0" width="200" height="59" uuid="dab65cb4-9d02-4303-8b32-8e15f011a073"/>
+				<imageExpression><![CDATA["logo_USAC_SUNcolor.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30">
+			<textField>
+				<reportElement stretchType="ElementGroupHeight" x="0" y="10" width="240" height="20" uuid="f6a21388-5d24-4841-9ec2-56c24c3322e7"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Fuente: " + $F{source}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" x="240" y="10" width="120" height="20" uuid="9a320dfa-448e-4bde-a058-a44bbdae2565">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total de aspirantes examinados]]></text>
+			</staticText>
+			<textField>
+				<reportElement stretchType="ElementGroupHeight" x="360" y="10" width="120" height="20" uuid="6ad9be54-8a40-4d22-862e-939cd7b313ea"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{examineesCount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<subreport>
+				<reportElement x="-20" y="0" width="612" height="30" uuid="5d25f23c-a080-4ad0-98eb-3ea1520c9e42"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("scoreResumen.scoreResumen")]]></dataSourceExpression>
+				<subreportExpression><![CDATA["distribucion_de_puntuaciones_sub_report.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="360" y="-1" width="212" height="21" uuid="fa4c2910-287e-41ca-8588-e0c31ed1afb0"/>
+				<textFieldExpression><![CDATA["Generado el " + new SimpleDateFormat("dd-MMM-yyy HH:mm").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
