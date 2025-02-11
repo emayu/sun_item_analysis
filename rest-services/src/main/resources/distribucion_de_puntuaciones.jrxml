@@ -65,7 +65,7 @@ Reporte de distribución de puntuaciones]]></text>
 			</staticText>
 			<image hAlign="Right">
 				<reportElement x="372" y="0" width="200" height="59" uuid="dab65cb4-9d02-4303-8b32-8e15f011a073"/>
-				<imageExpression><![CDATA["logo_USAC_SUNcolor.png"]]></imageExpression>
+				<imageExpression><![CDATA["logo_USAC_nuevo_SUNcolor.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>

@@ -72,7 +72,7 @@ Sistema de Ubicación y Nivelación -SUN-]]></text>
 			</staticText>
 			<image hAlign="Right">
 				<reportElement x="530" y="0" width="180" height="50" uuid="7eb19d84-46c9-4f50-ab10-b4eeb5a1a20a"/>
-				<imageExpression><![CDATA["logo_USAC_SUNcolor.png"]]></imageExpression>
+				<imageExpression><![CDATA["logo_USAC_nuevo_SUNcolor.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>
