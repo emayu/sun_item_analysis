@@ -77,7 +77,7 @@ public class ReportController {
         ByteArrayResource bar = new ByteArrayResource(baos.toByteArray());
         
         //builing reponse
-        String fileName = LocalDateTime.now() + "_test_report.pdf";
+        String fileName = LocalDateTime.now() + "_distribucion_de_puntuaciones.pdf";
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_PDF);
         headers.setContentLength(bar.contentLength());
@@ -102,7 +102,7 @@ public class ReportController {
         
         ByteArrayResource bar = new ByteArrayResource(baos.toByteArray());
         
-        String fileName = LocalDateTime.now() + "_test_report.xlsx";
+        String fileName = LocalDateTime.now() + "_distribucion_de_puntuaciones.xlsx";
         
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"));
@@ -144,7 +144,7 @@ public class ReportController {
         data = transformData(data);
         
         //filling report with data        
-        final String targetReportName = "/informe_resultados.jrxml";
+        final String targetReportName = "/informe_de_resultados.jrxml";
         
         Map parms = new HashMap<String, Object>();
         parms.put("subtitle", subTitleReport);
@@ -173,7 +173,7 @@ public class ReportController {
         data = transformData(data);
         
         //filling report with data        
-        final String targetReportName = "/informe_resultados.jrxml";
+        final String targetReportName = "/informe_de_resultados.jrxml";
         
         Map parms = new HashMap<String, Object>();
         parms.put("subtitle", subTitleReport);

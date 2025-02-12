@@ -166,7 +166,7 @@ Sistema de Ubicación y Nivelación -SUN-]]></text>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
 				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("scoreResumen.scoreResumen")]]></dataSourceExpression>
-				<subreportExpression><![CDATA["informe_resultados_sub_report.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA["informe_de_resultados_sub_report.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>
