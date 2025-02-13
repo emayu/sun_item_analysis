@@ -145,7 +145,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/report/scoreDistribution/xls",
+					"raw": "http://localhost:8080/api/report/scoreDistribution/xlsx",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -155,7 +155,7 @@
 						"api",
 						"report",
 						"scoreDistribution",
-						"xls"
+						"xlsx"
 					]
 				}
 			},
