@@ -13,7 +13,7 @@ export class ReportService {
   }
 
   downloadScoreDistributionReportXls(body:any){
-    return this.http.post('/api/report/scoreDistribution/xls', body, {responseType:'blob', observe:'response'});
+    return this.http.post('/api/report/scoreDistribution/xlsx', body, {responseType:'blob', observe:'response'});
   }
 
   downloadResultReporPDF(subtitle:string|null, body:any){
@@ -30,7 +30,7 @@ export class ReportService {
     let params = new HttpParams();
     params = subtitle === null? params: params.append('subtitle', subtitle);
 
-    return this.http.post('/api/report/resultReport/xls', body, {
+    return this.http.post('/api/report/resultReport/xlsx', body, {
       params,
       responseType: 'blob',
       observe: 'response'
