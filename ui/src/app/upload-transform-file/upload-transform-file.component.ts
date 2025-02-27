@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatStepper, MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -15,7 +15,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox'
 import { RouterModule } from '@angular/router';
 import { StepperSelectionEvent } from '@angular/cdk/stepper';
-
+import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
 
 @Component({
   selector: 'app-upload-transform-file',
@@ -30,6 +30,7 @@ import { StepperSelectionEvent } from '@angular/cdk/stepper';
     MatCheckboxModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    MatMenuModule,
     CommonModule, 
     RouterModule,
     HttpClientModule],
@@ -47,6 +48,10 @@ export class UploadTransformFileComponent {
   displayedColumns:string[] = [];
   itemsConfigData:any[][]= [];
   formArrayInputs = new FormArray<FormControl>([]);
+
+  @ViewChild(MatMenuTrigger)
+  contextMenu: MatMenuTrigger | null = null;
+  contextMenuPosition = { x: '0px', y: '0px' };
 
   configFormGroup = this.formBuilder.group({
     syllabus: ['', Validators.required],
@@ -66,6 +71,21 @@ export class UploadTransformFileComponent {
     if(input?.files){
       this.selectedFile = input.files[0];
     }
+  }
+
+  onContextMenu(event: MouseEvent){
+    event.preventDefault();
+    if(this.line2.value && this.line2.invalid){
+      this.contextMenuPosition.x = event.clientX + 'px';
+      this.contextMenuPosition.y = event.clientY + 'px';
+      this.contextMenu?.menu?.focusFirstItem('mouse');
+      this.contextMenu?.openMenu();
+    }
+  }
+
+  removeBlankSpacesOnLine2(){
+    const newValue = this.line2.value?.replace(/\s/g,'');
+    this.line2.setValue(newValue??"");
   }
 
   transform(stepper:MatStepper|null){
