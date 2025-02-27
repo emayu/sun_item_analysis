@@ -76,7 +76,9 @@ public class TestDataCreator {
         try{
             amountOfQuestion = Integer.parseInt(firstLineConfig.substring(trimColumn, 3));
         }catch(NumberFormatException ex){
-            throw new ConfigException("No se encontró una configuración válida(cantidad de items), Línea 1");
+            throw new ConfigException("No se encontró una configuración válida(cantidad de items), Línea 1.\n"
+                    + "Recuerde que la cantidad de items se debe colocar en las columnas 1 a la 3, alineada a la derecha, "
+                    + "de ser necesario dejar espacios en blanco.");
         }
         
         config.setItemsNumberConfig(amountOfQuestion);

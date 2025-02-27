@@ -114,7 +114,7 @@
         <div *ngIf="error">
             <p>Por favor revise la información proporcionada y vuelva a intentar.</p>
             <h4>Detalle error:</h4>
-            <p>{{error}}</p>
+            <p class="snackbar-error">{{error}}</p>
             <button mat-button matStepperPrevious>Atrás</button>
             <button mat-button 
                 (click)="transform(stepper)"
