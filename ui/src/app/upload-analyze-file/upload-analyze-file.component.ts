@@ -25,6 +25,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { ReportService } from '../../services/report.service';
 import { Observable } from 'rxjs';
+import { AppFilePreviewComponent } from '../app-file-preview/app-file-preview.component';
 
 export interface DialogData {
   subtitle:string;
@@ -44,7 +45,9 @@ export interface DialogData {
     MatMenuModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule],
+    FormsModule,
+    AppFilePreviewComponent,
+  ],
   templateUrl: './upload-analyze-file.component.html',
   styleUrl: './upload-analyze-file.component.scss'
 })

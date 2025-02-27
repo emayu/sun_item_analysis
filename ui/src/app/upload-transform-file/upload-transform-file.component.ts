@@ -16,6 +16,7 @@ import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox
 import { RouterModule } from '@angular/router';
 import { StepperSelectionEvent } from '@angular/cdk/stepper';
 import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
+import { AppFilePreviewComponent } from '../app-file-preview/app-file-preview.component';
 
 @Component({
   selector: 'app-upload-transform-file',
@@ -33,7 +34,9 @@ import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
     MatMenuModule,
     CommonModule, 
     RouterModule,
-    HttpClientModule],
+    HttpClientModule,
+    AppFilePreviewComponent,
+  ],
   providers: [UpdaloadFileService],
   templateUrl: './upload-transform-file.component.html',
   styleUrl: './upload-transform-file.component.scss'

@@ -4,6 +4,9 @@
 <input hidden type="file" (change)="onFileChange($event.target)" #fileInput accept=".txt" >
 <span class="file-name">{{selectedFile?.name}}</span>
 </form>
+<app-app-file-preview [file]="selectedFile"  />
+
+
 <button mat-raised-button 
  style="margin-top: 1em;"
  (click)="onSubmit()" 

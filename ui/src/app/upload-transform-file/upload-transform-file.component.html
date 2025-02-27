@@ -8,10 +8,12 @@
             Selecciona archivo <br/>
             <b>{{ selectedFile ? selectedFile.name : "" }}</b>
         </ng-template>
-        <button type="button" mat-raised-button (click)="fileInput.click()">Elegir archivo</button>
+        <button style="margin-right: 1em;" type="button" mat-raised-button (click)="fileInput.click()">Elegir archivo</button>
         <input hidden type="file" (change)="onFileChange($event.target)" #fileInput accept=".txt" >
         <span class="file-name">{{selectedFile?.name}}</span>
+        <app-app-file-preview [file]="selectedFile" />
         <div>
+            
             <button style="margin-top: 1em;" mat-button 
              [disabled]="!selectedFile"
              matStepperNext>Siguiente</button>
