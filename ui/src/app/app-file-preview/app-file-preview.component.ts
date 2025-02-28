@@ -26,7 +26,6 @@ export class AppFilePreviewComponent implements OnChanges {
         const fileContent = reader.result as string;
         this.fileContent = this.getLines(fileContent, PREVIEW_AMOUNT_LINES);
       }
-      console.log(this.file);
       if(this.file?.type.startsWith('text')){
         reader.readAsText(this.file)
       } else {
