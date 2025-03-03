@@ -22,6 +22,7 @@ import {
  } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatStepperModule } from '@angular/material/stepper';
 import { FormsModule } from '@angular/forms';
 import { ReportService } from '../../services/report.service';
 import { Observable } from 'rxjs';
@@ -47,6 +48,7 @@ export interface DialogData {
     MatInputModule,
     FormsModule,
     AppFilePreviewComponent,
+    MatStepperModule,
   ],
   templateUrl: './upload-analyze-file.component.html',
   styleUrl: './upload-analyze-file.component.scss'
@@ -57,6 +59,7 @@ export class UploadAnalyzeFileComponent {
   isSending = false;
   proccededData:ResponseData | null =  null;
   isDevMode = isDevMode();
+  error: string |null = null;
 
   constructor(
     private processFileService:UpdaloadFileService,
@@ -95,16 +98,37 @@ export class UploadAnalyzeFileComponent {
     }
   }
 
-  private showErrors(error: any) {
+  private unwrapRawJson(data:Blob):Promise<any>{
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        try{
+          resolve(JSON.parse(reader.result as string));
+        }catch(e){
+          console.log('no se pudo leer la respuesta', e);
+          reject(null);
+        }
+      }
+      reader.readAsText(data);
+    });
+  }
+
+  private async showErrors(error: any) {
     console.error('error:', error);
     this.isSending = false;
     if (error instanceof HttpErrorResponse) {
       console.log('is HttpErrorResponse');
     }
+    if ( error.error instanceof Blob ){
+      error.error = await this.unwrapRawJson(error.error);
+    }
+
     if (error.error && error.error.message) {
-      this._snackBar.open(`Error:\n${error.error.message}`, "Cerrar", { panelClass: "snackbar-error" });
+      this.error = error.error.message;
+      this._snackBar.open(`Error:\n${this.error}`, "Cerrar", { panelClass: "snackbar-error" , duration:4500 });
     } else {
-      this._snackBar.open(`Ocurrió un error`, "Cerrar", { panelClass: "snackbar-error" });
+      this.error = error?.message || `Ocurrió un error desconocido`;
+      this._snackBar.open(this.error!, "Cerrar", { panelClass: "snackbar-error", duration:4500 });
     }
   }
 
@@ -115,6 +139,7 @@ export class UploadAnalyzeFileComponent {
       formData.append('file', this.selectedFile);
       console.log('sending');
       this.isSending = true;
+      this.error = null;
       this.processFileService.analyzeFile(formData)
       .subscribe({
         next: (response) => {
@@ -151,8 +176,9 @@ export class UploadAnalyzeFileComponent {
         const newWindow = window.open(url)!;
         setTimeout(()=> newWindow.document.title=fileName, 500);
       },
-      error: (err) => {
-        this.showErrors(err);
+      error: async (err) => {
+        await this.showErrors(err);
+        this.error = null;//clean the error from UI, its is shown in snack bar only
       }
     })
   }
@@ -182,8 +208,9 @@ export class UploadAnalyzeFileComponent {
           }
           this.downloadBlobToFile(response.body as Blob, fileName);
         },
-        error: (err) => {
-          this.showErrors(err);
+        error: async (err) => {
+          await this.showErrors(err);
+          this.error = null;//clean the error from UI, its is shown in snack bar only
         }
       })
   }

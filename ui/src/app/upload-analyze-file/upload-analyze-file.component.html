@@ -1,55 +1,74 @@
 <h2>Analizar archivo</h2>
-<form>
-<button type="button" mat-raised-button (click)="fileInput.click()">Elegir archivo</button>
-<input hidden type="file" (change)="onFileChange($event.target)" #fileInput accept=".txt" >
-<span class="file-name">{{selectedFile?.name}}</span>
-</form>
-<app-app-file-preview [file]="selectedFile"  />
-
-
-<button mat-raised-button 
- style="margin-top: 1em;"
- (click)="onSubmit()" 
- [disabled]="!selectedFile"
- color="primary">
- Analizar
-</button>
-
-<div *ngIf="isSending">
-    <mat-spinner diameter="30"></mat-spinner>
-    <a>Procesando</a>
-</div>
-<div *ngIf="proccededData">
-    <h3>Resultado:</h3>
-    <button mat-icon-button matTooltip="Descargar archivo texto" (click)="downloadTextFile()">
-        <mat-icon>download</mat-icon>
-    </button>
-    <button  mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon>more_vert</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="generateScoreDistributionPDF()">
-            <mat-icon>picture_as_pdf</mat-icon>
-            <span>Generar informe distribución de puntuaciones</span>
+<mat-stepper linear #stepper >
+    <mat-step 
+    [completed]="selectedFile">
+        <ng-template matStepLabel> 
+            Selecciona archivo <br/>
+            <b>{{ selectedFile ? selectedFile.name : "" }}</b>
+        </ng-template>
+        <form>
+            <button type="button" mat-raised-button (click)="fileInput.click()">Elegir archivo</button>
+            <input hidden type="file" (change)="onFileChange($event.target)" #fileInput accept=".txt" >
+            <span class="file-name">{{selectedFile?.name}}</span>
+            </form>
+            <app-app-file-preview [file]="selectedFile"  />
+            
+            
+        <button mat-raised-button 
+            style="margin-top: 1em;"
+            (click)="onSubmit()" 
+            [disabled]="!selectedFile"
+            color="primary"
+            matStepperNext>
+            Analizar
         </button>
-        <button mat-menu-item (click)="generateScoreDistributionReportXLS()">
-            <mat-icon>save_alt</mat-icon>
-            <span>en XLS</span>
-        </button>
-        <mat-divider></mat-divider>
-        <button mat-menu-item  (click)="generateResultReportPDF()" >
-            <mat-icon>picture_as_pdf</mat-icon>
-            <span>Generar informe de resultados</span>
-        </button>
-        <button mat-menu-item (click)="generateResultReporXLS()">
-            <mat-icon>save_alt</mat-icon>
-            <span>XLS</span>
-        </button>
-    </mat-menu>
-    <mat-divider></mat-divider>
-    <pre>{{ proccededData.textReport }}</pre>
-    <mat-divider></mat-divider>
-    <button mat-icon-button matTooltip="Descargar archivo texto" (click)="downloadTextFile()">
-        <mat-icon>download</mat-icon>
-    </button>
-</div>
+    </mat-step>
+    <mat-step 
+     [hasError]="error" >
+        <ng-template matStepLabel>Completado</ng-template>
+        <div *ngIf="isSending">
+            <mat-spinner ></mat-spinner>
+            <a>Procesando</a>
+        </div>
+        <div *ngIf="error">
+            <p>Por favor revise la información proporcionada y vuelva a intentar.</p>
+            <h4>Detalle error:</h4>
+            <p class="snackbar-error">{{error}}</p>
+            <button mat-button matStepperPrevious>Atrás</button>
+        </div>
+        <div *ngIf="proccededData">
+            <h3>Resultado:</h3>
+            <button mat-icon-button matTooltip="Descargar archivo texto" (click)="downloadTextFile()">
+                <mat-icon>download</mat-icon>
+            </button>
+            <button  mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="generateScoreDistributionPDF()">
+                    <mat-icon>picture_as_pdf</mat-icon>
+                    <span>Generar informe distribución de puntuaciones</span>
+                </button>
+                <button mat-menu-item (click)="generateScoreDistributionReportXLS()">
+                    <mat-icon>save_alt</mat-icon>
+                    <span>en XLS</span>
+                </button>
+                <mat-divider></mat-divider>
+                <button mat-menu-item  (click)="generateResultReportPDF()" >
+                    <mat-icon>picture_as_pdf</mat-icon>
+                    <span>Generar informe de resultados</span>
+                </button>
+                <button mat-menu-item (click)="generateResultReporXLS()">
+                    <mat-icon>save_alt</mat-icon>
+                    <span>XLS</span>
+                </button>
+            </mat-menu>
+            <mat-divider></mat-divider>
+            <pre>{{ proccededData.textReport }}</pre>
+            <mat-divider></mat-divider>
+            <button mat-icon-button matTooltip="Descargar archivo texto" (click)="downloadTextFile()">
+                <mat-icon>download</mat-icon>
+            </button>
+        </div>
+    </mat-step>
+</mat-stepper>
