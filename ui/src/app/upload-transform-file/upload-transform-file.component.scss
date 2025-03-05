@@ -3,8 +3,8 @@ form {
     flex-direction: column;
   }
 
-input {
-    font-family:  monospace;
+mat-form-field input {
+    font-family:  "Fira Code", monospace;
 }
 
 .config-table {
